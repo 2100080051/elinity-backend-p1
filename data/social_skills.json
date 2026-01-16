@@ -1,0 +1,692 @@
+[
+  {
+    "id": 1,
+    "category": "social",
+    "name": "Active Listening",
+    "one_liner": "Learn to listen in a way that makes people feel deeply heard.",
+    "description": "This session helps you build the skill of listening without interrupting, judging, or preparing responses in advance.",
+    "notes": "Solo session; voice strongly recommended.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Silence & Presence",
+        "goal": "Practice holding space without filling it.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Reflective Listening",
+        "goal": "Mirror back what you heard.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 2,
+    "category": "social",
+    "name": "Genuine Curiosity",
+    "one_liner": "Learn to ask better questions and spark richer conversations.",
+    "description": "You’ll practice curiosity-driven dialogue, follow-up questions, and deeper inquiry techniques.",
+    "notes": "Solo; interactive conversation practice.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Better Questions",
+        "goal": "Ask questions that can't be answered with Yes/No.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Digging Deeper",
+        "goal": "Follow up on the answer, not your own thought.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 3,
+    "category": "social",
+    "name": "Emotional Attunement",
+    "one_liner": "Sense what someone is feeling and respond with intelligence.",
+    "description": "You’ll practice identifying emotional cues, tone shifts, and unspoken needs in social interactions.",
+    "notes": "Voice or text.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Reading Rooms",
+        "goal": "Observe the emotional temperature.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Matching Energy",
+        "goal": "Aligning your response to their state.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 4,
+    "category": "social",
+    "name": "Social Warmth",
+    "one_liner": "Learn to radiate warmth, openness, and approachability.",
+    "description": "Develop conversational tone, micro-expressions, and phrasing that makes people feel at ease.",
+    "notes": "Solo practice.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Warm Greetings",
+        "goal": "Start interactions with positive energy.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Inclusive Language",
+        "goal": "Using 'We' and invitation signals.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 5,
+    "category": "social",
+    "name": "Expressive Communication",
+    "one_liner": "Speak with more color, imagery, and expressive clarity.",
+    "description": "You’ll practice vivid language, storytelling fragments, and emotional expression.",
+    "notes": "Great with voice.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Vivid Verbs",
+        "goal": "Replace boring words with descriptive ones.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Mini-Stories",
+        "goal": "Turn a fact into an anecdote.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 6,
+    "category": "social",
+    "name": "Asking Great Questions",
+    "one_liner": "Shift conversations from small talk to meaningful talk.",
+    "description": "Practice open-ended questions, layered questions, and deepening techniques.",
+    "notes": "Solo or with a partner.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "The 'Why' and 'How'",
+        "goal": "Move past 'What' and 'Where'.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Question Stacking",
+        "goal": "Building a chain of interest.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 7,
+    "category": "social",
+    "name": "Social Confidence",
+    "one_liner": "Build grounded confidence in any social setting.",
+    "description": "Explore confidence triggers, create grounding scripts, and simulate social scenarios.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Power Posing (Mental)",
+        "goal": "Adopt a confident mindset.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Entering the Room",
+        "goal": "Start interactions without apology.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 8,
+    "category": "social",
+    "name": "Charisma Calibration",
+    "one_liner": "Learn the ingredients of magnetic presence.",
+    "description": "Work on cadence, warmth, confidence, downward-inflected tone, and emotional intelligence.",
+    "notes": "Voice recommended.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Presence",
+        "goal": "Be fully where you are.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Power & Warmth",
+        "goal": "Balance authority with kindness.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 9,
+    "category": "social",
+    "name": "Conflict Softening",
+    "one_liner": "Handle tension gracefully and reduce emotional spikes.",
+    "description": "Practice de-escalation cues, softening phrases, and perspective-taking exercises.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Agreement Frames",
+        "goal": "Find the point of agreement first.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Tone Down",
+        "goal": "Lower volume and speed to calm others.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 10,
+    "category": "social",
+    "name": "Humor Fluency",
+    "one_liner": "Learn light, playful, naturally funny conversational rhythm.",
+    "description": "Practice playful exaggeration, timing, observational humor, and gentle teasing.",
+    "notes": "Fun session; voice optional.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Observational Wit",
+        "goal": "Comment on the shared environment.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Self-Deprecation",
+        "goal": "Laugh at yourself safely.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 11,
+    "category": "social",
+    "name": "Boundary Communication",
+    "one_liner": "Say “no” without guilt and “yes” without resentment.",
+    "description": "Focus on phrasing, timing, tone, and self-protection language.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Directness",
+        "goal": "Say what you mean simply.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Handling Pushback",
+        "goal": "Hold the line when pressed.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 12,
+    "category": "social",
+    "name": "Building Trust",
+    "one_liner": "Learn how trust is built, lost, and repaired.",
+    "description": "Explore transparency, consistency, emotional reliability, and micro-trust behaviors.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Reliability",
+        "goal": "Do what you say you will.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Vulnerability as Trust",
+        "goal": "Share to encourage sharing.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 13,
+    "category": "social",
+    "name": "Constructive Feedback",
+    "one_liner": "Give feedback that strengthens, not damages, relationships.",
+    "description": "Learn timing, tone, framing, and shared-outcome communication.",
+    "notes": "Solo or partner.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "The Sandwich (Modified)",
+        "goal": "Support-Critique-Support.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Future Focus",
+        "goal": "Talk about what to do next time.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 14,
+    "category": "social",
+    "name": "Receiving Feedback Well",
+    "one_liner": "Become better at hearing feedback without defensiveness.",
+    "description": "Practise emotional regulation, curiosity, and the skill of separating self-worth from critique.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Separating Self from Act",
+        "goal": "You are not your mistake.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Asking for Examples",
+        "goal": "Get clarity instead of getting mad.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 15,
+    "category": "social",
+    "name": "Boundary Detection",
+    "one_liner": "Sense when someone is uncomfortable and adjust gracefully.",
+    "description": "Learn to notice verbal and non-verbal cues (AI simulates them verbally).",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Watching for 'No'",
+        "goal": "Spot hesitation and deflection.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Backing Off",
+        "goal": "Gracefully retreat without awkwardness.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 16,
+    "category": "social",
+    "name": "Conversation Flow",
+    "one_liner": "Keep conversations smooth, dynamic, and engaging.",
+    "description": "Learn transitions, pivots, topic deepening, spotlight sharing, and conversational pacing.",
+    "notes": "Solo; voice helps.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Bridging Topics",
+        "goal": "Connect A to B smoothly.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Handling Silences",
+        "goal": "Be comfortable with pauses.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 17,
+    "category": "social",
+    "name": "Social Awareness",
+    "one_liner": "Understand the energy, dynamics, and emotional vibe of a group.",
+    "description": "Work on reading group signals, avoiding misreads, and adjusting presence to the space.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Scanning the Room",
+        "goal": "Notice who is talking and who isn't.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Role recognition",
+        "goal": "See the leader, the joker, the observer.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 18,
+    "category": "social",
+    "name": "Empathic Mirroring",
+    "one_liner": "Make people feel understood through thoughtful mirroring.",
+    "description": "Practise emotional language reflection, validating statements, and shared emotional space techniques.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Validating Emotion",
+        "goal": "Say 'It makes sense you feel that way'.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Physical Mirroring (Described)",
+        "goal": "Match posture and energy.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 19,
+    "category": "social",
+    "name": "Assertive Communication",
+    "one_liner": "Speak clearly, confidently, respectfully — without shrinking or overpowering.",
+    "description": "Learn assertive phrasing frameworks and practise through scenario simulations.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Passive vs Aggressive vs Assertive",
+        "goal": "Know the difference.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Broken Record Technique",
+        "goal": "Repeat your point calmly.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 20,
+    "category": "social",
+    "name": "Small Talk → Real Talk Transitioning",
+    "one_liner": "Seamlessly shift from surface chat to meaningful conversation.",
+    "description": "Practise transitioning techniques, emotional bidding, and revealing-without-dumping.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Finding Hooks",
+        "goal": "Listen for the interesting word.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "The Deep Dive",
+        "goal": "Ask about feelings, not just facts.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 21,
+    "category": "social",
+    "name": "Social Calibration",
+    "one_liner": "Know when to talk, when to listen, and when to pause.",
+    "description": "Train timing, interruption avoidance, social spacing, and rhythm matching.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Give and Take",
+        "goal": "Balance talking time.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Interrupting Gracefully",
+        "goal": "How to jump in without being rude.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 22,
+    "category": "social",
+    "name": "Non-Defensive Communication",
+    "one_liner": "Respond calmly even when emotions run high.",
+    "description": "Practise removing ego, using grounding language, and reframing accusations into dialogue.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Dropping the Shield",
+        "goal": "Listen to the content, not the tone.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Curious Response",
+        "goal": "Ask 'Say more about that' instead of fighting.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 23,
+    "category": "social",
+    "name": "Vulnerability Expression",
+    "one_liner": "Learn to open up without oversharing or under-sharing.",
+    "description": "Identify safe vulnerability levels, emotional pacing, and relational disclosure.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "The Vulnerability Ladder",
+        "goal": "Start small and build up.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Checking Reception",
+        "goal": "See if they can handle your story.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 24,
+    "category": "social",
+    "name": "Connection-Building Skills",
+    "one_liner": "Create warmth, resonance, and emotional closeness with intention.",
+    "description": "Practise emotional bridges, shared moments, and small relational risks.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Finding Common Ground",
+        "goal": "Connect on shared experiences.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Shared Experiences",
+        "goal": "Create a moment together.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 25,
+    "category": "social",
+    "name": "Social Decision-Making",
+    "one_liner": "Make wiser choices in social and relational situations.",
+    "description": "Explore boundaries, responsibility, self-respect, and strategic thinking.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Cost Benefit Analysis",
+        "goal": "Is this event worth your energy?",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Aligning Values",
+        "goal": "Do these people fit your life?",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 26,
+    "category": "social",
+    "name": "Presence & Attunement",
+    "one_liner": "Show up fully, without distraction or internal noise.",
+    "description": "Practise grounding, mindful awareness, and emotional presence exercises.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Phone Away",
+        "goal": "Practice undivided attention.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Deep Focus",
+        "goal": "Listen as if there is a test later.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 27,
+    "category": "social",
+    "name": "Conversation Confidence",
+    "one_liner": "Feel comfortable, natural, and fluid when speaking.",
+    "description": "Practise confidence scripts, self-regulation, and conversational anchoring techniques.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Starter Scripts",
+        "goal": "Have 3 good openers ready.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Recovering from Awkwardness",
+        "goal": "Laugh it off and move on.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 28,
+    "category": "social",
+    "name": "Social Refinement",
+    "one_liner": "Polish your communication style to be clearer, softer, and more elegant.",
+    "description": "Practise trimming unnecessary detail, phrasing with precision, and improving conversational elegance.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Conciseness",
+        "goal": "Get to the point.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Polite Assertiveness",
+        "goal": "Be firm but kind.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 29,
+    "category": "social",
+    "name": "Reading Between the Lines",
+    "one_liner": "Understand subtext and implicit meanings.",
+    "description": "Train your ability to infer intent, emotion, and hidden messages through simulation with AI.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Subtext Sprint",
+        "goal": "What did they *really* mean?",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Context Clues",
+        "goal": "Using history to interpret now.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 30,
+    "category": "social",
+    "name": "Conversational Boundaries",
+    "one_liner": "Respect others’ limits while protecting your own.",
+    "description": "Practise avoiding over-asking, pressing, or interrogating. Learn gentle boundary reinforcement.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Not Prying",
+        "goal": "Accepting 'I don't know' as an answer.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Changing the Subject",
+        "goal": "Moving away from uncomfortable topics.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  }
+]

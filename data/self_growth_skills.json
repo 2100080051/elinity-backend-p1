@@ -1,0 +1,662 @@
+[
+  {
+    "id": 1,
+    "category": "Self-Growth Skills",
+    "name": "Self-Compassion",
+    "description": "Learn to respond to your own struggles with warmth instead of self-judgment. This session helps you develop a kinder internal voice.",
+    "notes": "Solo. Works beautifully with voice.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Calming the Critic",
+        "goal": "Identify and soften self-critical thoughts.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Self-Kindness",
+        "goal": "Speak to yourself like a friend.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 2,
+    "category": "Self-Growth Skills",
+    "name": "Emotional Awareness",
+    "description": "Strengthen your ability to identify and name your emotions accurately. The AI guides you to map bodily sensations.",
+    "notes": "Solo. Useful precursor to regulation modules.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Body Scan",
+        "goal": "Where do you feel the emotion?",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Naming the Nuance",
+        "goal": "Distinguish between sad vs disappointed.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 3,
+    "category": "Self-Growth Skills",
+    "name": "Resilience Building",
+    "description": "Cultivate psychological resilience and adaptive self-trust. You’ll explore adversity patterns.",
+    "notes": "Solo. Designed for multi-session progression.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Past Wins",
+        "goal": "Review how you survived before.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Reframing Failure",
+        "goal": "See setbacks as data, not identity.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 4,
+    "category": "Self-Growth Skills",
+    "name": "Healthy Boundaries",
+    "description": "Build boundaries that protect your energy while keeping relationships warm.",
+    "notes": "Solo but can optionally involve partner/family later.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Energy Audit",
+        "goal": "Where are you leaking energy?",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "The Guilt-Free No",
+        "goal": "Decline requests politely.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 5,
+    "category": "Self-Growth Skills",
+    "name": "Self-Validation",
+    "description": "Learn to affirm your thoughts, emotions, and experiences without outsourcing approval.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Internal Approval",
+        "goal": "Stop asking 'Is this okay?'.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Trusting Gut",
+        "goal": "Validate your own perception.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 6,
+    "category": "Self-Growth Skills",
+    "name": "Personal Values Alignment",
+    "description": "Identify your core values and understand where your life aligns or diverges.",
+    "notes": "Solo; includes journaling prompts.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Values Discovery",
+        "goal": "List your top 5 values.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Alignment Check",
+        "goal": "Does your calendar match your values?",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 7,
+    "category": "Self-Growth Skills",
+    "name": "Self-Respect & High Standards",
+    "description": "Build an internal standard system that supports dignity, direction, and self-worth.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Raising the Bar",
+        "goal": "Identify where you settle for less.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Keeping Promises",
+        "goal": "Honor commitments to yourself.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 8,
+    "category": "Self-Growth Skills",
+    "name": "Emotional Regulation",
+    "description": "Strengthen your ability to calm, soothe, and stabilize yourself under pressure.",
+    "notes": "Solo; voice recommended.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Breathing Room",
+        "goal": "Box breathing technique.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Grounding 5-4-3-2-1",
+        "goal": "engage senses to stop spiral.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 9,
+    "category": "Self-Growth Skills",
+    "name": "Self-Acceptance",
+    "description": "Make peace with the parts of yourself you often reject or hide.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Shadow Work Lite",
+        "goal": "Accepting the 'bad' parts.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Radical Acceptance",
+        "goal": "Stop fighting reality.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 10,
+    "category": "Self-Growth Skills",
+    "name": "Internal Locus of Control",
+    "description": "Learn to anchor your sense of agency internally rather than externally.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Owning Choices",
+        "goal": "Replace 'have to' with 'choose to'.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Agency Map",
+        "goal": "Review what you can influence.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 11,
+    "category": "Self-Growth Skills",
+    "name": "Self-Discipline & Follow-Through",
+    "description": "Strengthen your ability to commit, follow through, and keep promises to yourself.",
+    "notes": "Solo. Optional habit tracking.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Tiny Habits",
+        "goal": "Start small to build momentum.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Resistance handling",
+        "goal": "What to do when you don't wanna.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 12,
+    "category": "Self-Growth Skills",
+    "name": "Self-Soothing",
+    "description": "Learn to calm yourself during anxiety, loneliness, or emotional overwhelm.",
+    "notes": "Solo; voice recommended.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Safe Place",
+        "goal": "Visualization exercise.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Comfort Talk",
+        "goal": "Reassuring yourself verbally.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 13,
+    "category": "Self-Growth Skills",
+    "name": "Authenticity",
+    "description": "Express the real you with less fear and more grounded confidence.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Dropping Masks",
+        "goal": "Where do you fake it?",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Honest Voice",
+        "goal": "Speaking true opinion.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 14,
+    "category": "Self-Growth Skills",
+    "name": "Narrative Reframing",
+    "description": "Rewrite limiting internal stories that hold you back.",
+    "notes": "Solo or voice.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Story Identification",
+        "goal": "Spot the 'I'm not enough' story.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Authoring New Chapter",
+        "goal": "Write a better ending.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 15,
+    "category": "Self-Growth Skills",
+    "name": "Confidence & Inner Strength",
+    "description": "Build robust, non-fragile confidence rooted in competence and self-belief.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Evidence Log",
+        "goal": "List proof of your competence.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Posture of Strength",
+        "goal": "Checking physical stance.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 16,
+    "category": "Self-Growth Skills",
+    "name": "Vulnerability Practice",
+    "description": "Strengthen your ability to open up without fear, shame, or overexposure.",
+    "notes": "Solo or partner.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Circle of Trust",
+        "goal": "Who is safe to tell?",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Sharing Weakness",
+        "goal": "Admitting a struggle.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 17,
+    "category": "Self-Growth Skills",
+    "name": "Self-Trust Repair",
+    "description": "Rebuild trust in yourself after repeated self-betrayal or inconsistency.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Acknowledge Betrayal",
+        "goal": "Admit where you let yourself down.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Small Promises",
+        "goal": "Rebuild one brick at a time.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 18,
+    "category": "Self-Growth Skills",
+    "name": "Clarity & Decision-Making",
+    "description": "Build clarity and decisiveness without overthinking.",
+    "notes": "Solo; includes practical exercises.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Decision Matrix",
+        "goal": "Criteria for choosing.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Gut Check",
+        "goal": "Listening to intuitive hit.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 19,
+    "category": "Self-Growth Skills",
+    "name": "Self-Forgiveness",
+    "description": "Release internal guilt and repair your relationship with your past self.",
+    "notes": "Solo, emotional content.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "The Mistake",
+        "goal": "Face what happened without shame.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Letting Go",
+        "goal": "Ritual of release.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 20,
+    "category": "Self-Growth Skills",
+    "name": "Mindful Awareness",
+    "description": "Strengthen your ability to observe without judgment.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Observer Self",
+        "goal": "Watch thoughts like clouds.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Non-Judgment",
+        "goal": "Stop labeling 'good' or 'bad'.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 21,
+    "category": "Self-Growth Skills",
+    "name": "Purpose Discovery",
+    "description": "Explore what genuinely energizes and motivates you.",
+    "notes": "Solo; journaling optional.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Energy Audit",
+        "goal": "What gives you life?",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Future Impact",
+        "goal": "What legacy to leave?",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 22,
+    "category": "Self-Growth Skills",
+    "name": "Courage & Fear Work",
+    "description": "Build the ability to act even when afraid. Identify fear patterns.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Naming Fear",
+        "goal": "What are you scared of?",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Doing It Anyway",
+        "goal": "Action despite emotion.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 23,
+    "category": "Self-Growth Skills",
+    "name": "Inner Child Integration",
+    "description": "Connect with younger emotional parts of yourself with care.",
+    "notes": "Solo, voice recommended.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Meeting the Child",
+        "goal": "Visualize younger self.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Reparenting",
+        "goal": "Giving them what they needed.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 24,
+    "category": "Self-Growth Skills",
+    "name": "Identity & Self-Concept",
+    "description": "Explore the deeper layers of who you are becoming.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Who Am I?",
+        "goal": "Writing the 'I Am' list.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Who Am I Becoming?",
+        "goal": "Vision of future self.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 25,
+    "category": "Self-Growth Skills",
+    "name": "Emotional Expression",
+    "description": "Improve your ability to express emotions clearly and safely.",
+    "notes": "Solo or partner.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Finding Words",
+        "goal": "Expanding emotional vocabulary.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Safe Release",
+        "goal": "Crying, shouting, writing.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 26,
+    "category": "Self-Growth Skills",
+    "name": "Self-Esteem Strengthening",
+    "description": "Build a healthier baseline sense of worth.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Unique Value",
+        "goal": "What do you bring to the table?",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Worthiness Check",
+        "goal": "You are enough now.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 27,
+    "category": "Self-Growth Skills",
+    "name": "Acceptance of Uncertainty",
+    "description": "Increase tolerance for ambiguity and unpredictability.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Control Freak Detox",
+        "goal": "Letting go of outcome.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Surrender",
+        "goal": "Peace in the unknown.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 28,
+    "category": "Self-Growth Skills",
+    "name": "Overcoming Overthinking",
+    "description": "Reduce cognitive spirals that steal clarity and peace.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Thought Stopping",
+        "goal": "Interrupting the loop.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Fact vs Story",
+        "goal": "What is actually true?",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 29,
+    "category": "Self-Growth Skills",
+    "name": "Self-Direction & Life Ownership",
+    "description": "Step into full ownership of your choices, habits, and direction.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Driver's Seat",
+        "goal": "Taking responsibility.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Intention Setting",
+        "goal": "Living on purpose.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 30,
+    "category": "Self-Growth Skills",
+    "name": "Gratitude & Positive Perspective",
+    "description": "Shift your attention toward what nourishes you.",
+    "notes": "Solo; optional journaling.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Three Good Things",
+        "goal": "Training the brain to scan for good.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Savoring",
+        "goal": "Lingering on positive moments.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  }
+]

@@ -1,0 +1,40 @@
+name: CI - Build and Smoke Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU (for cross-platform builds)
+        uses: docker/setup-qemu-action@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t elinity-backend:ci .
+
+      - name: Run container
+        run: |
+          docker run -d --name elinity_ci -p 8080:8080 elinity-backend:ci
+
+      - name: Wait for service
+        run: |
+          SECONDS=0; until curl -sSf http://localhost:8080/health || [ $SECONDS -gt 60 ]; do sleep 1; done
+
+      - name: Smoke test /health
+        run: |
+          curl -sSf http://localhost:8080/health
+
+      - name: Stop container
+        if: always()
+        run: |
+          docker logs elinity_ci || true
+          docker stop elinity_ci || true
+          docker rm elinity_ci || true

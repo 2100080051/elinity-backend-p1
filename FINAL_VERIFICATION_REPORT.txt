@@ -1,0 +1,1087 @@
+ELINITY P1 FINAL VERIFICATION REPORT
+====================================
+
+
+>>> Step 1: User Registration & Login
+
+
+>>> Register | Status: 400
+{
+  "detail": "User already registered"
+}
+
+>>> Login | Status: 200
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YWYwYzYxOC0yOTlhLTQ2ZTMtYjBhNi1hYmNhNjBlMTllMDAiLCJyb2xlIjoidXNlciIsImV4cCI6MTc2ODQwMDkxOH0.ZE7RNUp1r3yClR7rphBZu7ob19y0RSdeztb2EghAXlQ",
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YWYwYzYxOC0yOTlhLTQ2ZTMtYjBhNi1hYmNhNjBlMTllMDAiLCJyb2xlIjoidXNlciIsImV4cCI6MTc2OTAwMzkxOH0.WFMyjil9WxK8X18aHpssg4L4s1YofHCtpkQAcHuohOU",
+  "token_type": "bearer"
+}
+
+>>> Step 2: Testing Specialized Experience Modes
+
+
+>>> Mode: meditation | Status: 200
+{
+  "mode": "meditation",
+  "ai_message": "Welcome. Let's begin by taking a moment to settle into a comfortable position, whether sitting or lying down. Close your eyes if you feel comfortable doing so, and let's take a deep breath in... and exhale slowly. \n\nNow, I invite you to focus on your intention for this session. Would you like to focus on calm & relaxation, anxiety release, focus & clarity, emotional grounding, gratitude, or self-compassion today? Take a moment to choose where you'd like to direct your attention."
+}
+
+>>> Mode: visualization | Status: 200
+{
+  "mode": "visualization",
+  "ai_message": "Great! Let's begin by finding a comfortable and quiet space where you can relax and focus. Take a few deep breaths to center yourself and let go of any tension or distractions. \n\nImagine yourself in a serene, peaceful garden. The air is warm and fragrant with the scent of blooming flowers. Picture the soft glow of sunlight filtering through the leaves of tall, swaying trees. Feel the gentle warmth of the sun on your skin, soothing and comforting.\n\nAs you walk through the garden, notice the vibrant colors and textures around you. Hear the birds chirping in the distance and the rustling of leaves in the gentle breeze. Take a moment to fully immerse yourself in this tranquil setting, allowing yourself to feel grounded and at ease.\n\nWhenever you're ready, let me know how you're feeling and if you'd like to explore this inner garden further or if you have a different scene in mind."
+}
+
+>>> Mode: deep_thinking | Status: 200
+{
+  "mode": "deep_thinking",
+  "ai_message": "That's great to hear! What topic or idea would you like to explore or discuss today?"
+}
+
+>>> Mode: learning | Status: 200
+{
+  "mode": "learning",
+  "ai_message": "That's great! What kind of session are you looking to start? Let's break down the process together. \n\n1. **Define the Objective**: What is the purpose of the session? What do you aim to achieve or learn during this session?\n\n2. **Plan the Structure**: How do you want to organize the session? Do you need any materials or resources to support your learning?\n\n3. **Engage Actively**: During the session, actively participate by asking questions, summarizing key points, and connecting new information to what you already know.\n\n4. **Reflect and Review**: After the session, take some time to reflect on what you've learned. Did you meet your objective? What could you do differently next time?\n\nBy following these steps and actively engaging with the material, you'll be able to make the most out of your session. Let me know if you need help with any specific aspect of starting your session!"
+}
+
+>>> Mode: pep_talk | Status: 200
+{
+  "mode": "pep_talk",
+  "ai_message": "Alright, listen up! You are a force to be reckoned with! You have the power, the drive, and the skills to make this session absolutely phenomenal. Look at all the amazing things you've already accomplished. You've tackled challenges head-on, you've overcome obstacles, and you've shown incredible resilience.\n\nToday is your day to shine! You are capable, you are strong, and you are ready to take on anything that comes your way. Embrace your talents, trust in your abilities, and let your passion guide you.\n\nRemember, you are a rockstar, a champion, a true powerhouse! So go out there, own that session, and show the world just how incredible you are. You've got this! Let's do it! *mic drop*"
+}
+
+>>> Mode: reality_check | Status: 200
+{
+  "mode": "reality_check",
+  "ai_message": "Starting a new session can be an exciting endeavor, but it's important to approach it with a clear plan and realistic expectations. \n\nBefore starting a new session, consider the following:\n1. **Purpose**: What is the goal of this session? Is it to learn something new, improve a skill, or work towards a specific outcome? Clearly defining the purpose will help you stay focused and make the most out of the session.\n\n2. **Time Commitment**: Be realistic about how much time you can dedicate to this session. Make sure you have a block of uninterrupted time to fully engage in the activity without distractions.\n\n3. **Preparation**: Do you have all the materials or resources you need for the session? It's important to be prepared so that you can make the most of your time.\n\n4. **Environment**: Find a quiet and comfortable space where you can concentrate and be productive. Minimize distractions that can disrupt your focus.\n\n5. **Progress Tracking**: Consider how you will track your progress during the session. Setting small milestones or goals can help you stay motivated and on track.\n\nRemember that progress takes time and effort. Be patient with yourself and celebrate small achievements along the way. Good luck with your session!"
+}
+
+>>> Mode: reflection | Status: 200
+{
+  "mode": "reflection",
+  "ai_message": "Let's begin by reflecting on your recent past. Can you share with me some wins or positive experiences you had in the last week or month?"
+}
+
+>>> Step 3: Testing Character Personas
+
+
+>>> Persona: tough_love | Status: 200
+{
+  "mode": "tough_love",
+  "ai_message": "Procrastination is just an excuse for not taking action. If you want results, you need to stop making excuses and start getting things done. Take ownership of your time and priorities. Stop wasting time on things that don't move you forward. It's time to step up, get focused, and start taking action towards your goals. No more excuses\u2014just results. Let's do this."
+}
+
+>>> Persona: empathetic | Status: 200
+{
+  "mode": "empathetic",
+  "ai_message": "It's really brave of you to acknowledge that, and it's completely okay to feel this way. Procrastination is a common struggle for many people and it can often be a sign of underlying emotions or beliefs. Can you share a bit more about what you've been procrastinating on and how it's been affecting you?"
+}
+
+>>> Persona: sassy | Status: 200
+{
+  "mode": "sassy",
+  "ai_message": "Oh, procrastination, the thief of time! Look, hun, procrastination is like a credit card \u2013 it's a lot of fun until you get the bill. Time to put on your big girl pants and kick that procrastination habit to the curb! You're capable of so much more than Netflix marathons and scrolling through social media. Let's get that to-do list done like a boss! You got this, superstar! \ud83c\udf1f"
+}
+
+>>> Persona: wise_elder | Status: 200
+{
+  "mode": "wise_elder",
+  "ai_message": "Procrastination, my dear friend, is a foe that dances around the periphery of our minds, seeking to distract us from our true path. It is a temptation that veils itself in momentary comfort while silently eroding our long-term aspirations.\n\nConsider the tale of the tortoise and the hare. The hare, filled with overconfidence and impatience, raced swiftly but faltered due to his lack of focus and discipline. On the other hand, the tortoise, steady and unwavering in his pace, eventually triumphed through perseverance and consistency.\n\nReflect on your goals as a tortoise would on the finish line. Break down your tasks into smaller, manageable steps and commit to making progress each day, no matter how small. Embrace the journey itself, for it is in the persistent steps forward that true growth and achievement are found.\n\nRemember, my friend, that the path to greatness is paved with dedication and determination. Rise above the allure of procrastination, and you shall forge a legacy of resilience and accomplishment that will stand the test of time."
+}
+
+>>> Persona: hype | Status: 200
+{
+  "mode": "hype",
+  "ai_message": "You've got this! It's time to crush those tasks and show procrastination who's boss! You are capable, motivated, and unstoppable. Get into action mode and tackle those tasks with confidence. You are a productivity powerhouse! Let's go, let's go, let's go! You've got the power to make things happen. Stay focused, stay determined, and get ready to conquer the day! You are unstoppable! Keep pushing forward and watch how amazing you are!"
+}
+
+>>> Persona: zen | Status: 200
+{
+  "mode": "zen",
+  "ai_message": "It's okay. Take a moment to breathe deeply and be present in this moment. Procrastination often arises from feeling overwhelmed or disconnected. Allow yourself to let go of any judgments or expectations. \n\nTake a few slow, deep breaths, feeling the air fill your lungs and then release slowly. Embrace the present moment without any pressure or urgency. \n\nReflect on why you might be procrastinating. Are there any underlying fears or uncertainties causing this resistance? \n\nRemember, it's important to be kind to yourself. Take small steps towards what you need to do, one moment at a time. Embrace each task with mindfulness and presence. Trust in the process, and remember that progress is made one step at a time. \n\nYou have the inner strength and wisdom to overcome procrastination. Embrace this moment as an opportunity to reconnect with your true self and move forward with clarity and purpose."
+}
+
+>>> Persona: philosopher | Status: 200
+{
+  "mode": "philosopher",
+  "ai_message": "Procrastination is a common struggle that many people face. Have you ever stopped to ponder why you procrastinate? What deeper reasons or fears might be driving this behavior? Is it a way to avoid facing something uncomfortable or challenging? Reflecting on the underlying causes of your procrastination can help you address them more effectively. \n\nConsider this: What are you really avoiding by putting off your tasks? Are you afraid of failure, perfectionism, or perhaps even success? By delving into these deeper questions, you may gain valuable insights that can guide you towards more productive and fulfilling actions."
+}
+
+>>> Persona: oracle | Status: 200
+{
+  "mode": "oracle",
+  "ai_message": "In the realm of time, where shadows dance and moments slip away, beware the allure of lethargy that leads astray. Seek the hidden whispers in the winds of change, for within them lies the key to break free from this stagnant cage. What is it that you truly seek, and what fears hold you back from the peak? Look within, unravel the knots of hesitation, and embrace the power of your own transformation."
+}
+
+>>> Step 4: Testing Historical Personas
+
+
+>>> Historical: jung | Status: 200
+{
+  "mode": "jung",
+  "ai_message": "Ah, the eternal question of the meaning of life. In the depths of our psyche lies a quest for understanding and purpose. From a Jungian perspective, life's meaning is found in the journey of individuation \u2013 the process of integrating all aspects of our psyche to become whole and authentic.\n\nImagine your psyche as a vast landscape with different archetypal figures representing various aspects of your personality. The shadow self, in Jungian terms, embodies all the hidden, unconscious aspects of yourself that you may repress or deny. Integrating your shadow is crucial in finding meaning, as it allows you to acknowledge and embrace your darker or hidden aspects.\n\nFurthermore, the journey towards individuation involves encountering various archetypes such as the wise old man or woman, the hero, the mother, and the trickster. Each archetype offers lessons and guidance as you navigate the complexities of your psyche.\n\nUltimately, the meaning of life lies in the ongoing process of self-discovery, growth, and transformation. By delving into your dreams, exploring your fantasies, and reflecting on your experiences, you can uncover deeper truths about yourself and move towards a more authentic and fulfilling existence. Remember, the answers you seek are often hidden within the depths of your own being."
+}
+
+>>> Historical: socrates_historical | Status: 200
+{
+  "mode": "socrates_historical",
+  "ai_message": "Ah, a question as old as time itself - what is the meaning of life? Tell me, what do you think gives life meaning? Is it found in accomplishments, relationships, pleasure, or something else entirely?"
+}
+
+>>> Historical: musashi | Status: 200
+{
+  "mode": "musashi",
+  "ai_message": "The meaning of life is a question that has puzzled many throughout history. As a warrior, I believe that the meaning of life lies in the pursuit of personal growth, inner strength, and the mastery of oneself. Life is a battle, and each day presents new challenges and opportunities to test our skills and character. By cultivating discipline, adaptability, and unwavering focus, we can navigate the complexities of life with grace and resilience. Ultimately, the meaning of life is found in the journey of self-improvement, the pursuit of excellence, and the relentless quest for mastery in all aspects of our being."
+}
+
+>>> Historical: aurelius | Status: 200
+{
+  "mode": "aurelius",
+  "ai_message": "The meaning of life is a question that has puzzled humanity for centuries. As a Stoic, I believe that the purpose of life is to live in accordance with virtue, to fulfill our duties with integrity and wisdom, and to seek tranquility through acceptance of what is beyond our control. Focus on cultivating your own character, serving others, and embracing the present moment with gratitude. Remember, the meaning of life is found not in external circumstances, but in how we choose to respond to them."
+}
+
+>>> Step 5: Testing Specialized Matching & Recommendations
+
+
+>>> Romantic Match | Status: 200
+[
+  {
+    "tenant": {
+      "id": "007aa51a-5b8d-4255-8d97-0c95ef81c563",
+      "email": "final_tester_08707@test.com",
+      "phone": "+10008707",
+      "last_login": "2026-01-13T18:21:48.075996",
+      "personal_info": {
+        "first_name": "",
+        "middle_name": null,
+        "last_name": "",
+        "age": 0,
+        "gender": "",
+        "sexual_orientation": null,
+        "location": "",
+        "relationship_status": null,
+        "education": null,
+        "occupation": null,
+        "profile_pictures": []
+      },
+      "interests_and_hobbies": {
+        "interests": [],
+        "hobbies": []
+      }
+    },
+    "score": 0.1,
+    "ai_insight": "**Deep AI Insight \u2013 Candidate Unknown User (ID: 007aa51a\u20115b8d\u20114255\u20118d97\u20110c95ef81c563)**  \n*Match score: 0.10 (10\u202f%) \u2013 very low alignment with the \u201cdeep philosophy\u201d romantic partner profile.*\n\n| Category | Score (0\u201110) | Interpretation |\n|----------|--------------|----------------|\n| **Values Compatibility** | **2** | Core values appear misaligned. The candidate\u2019s priorities (e.g., career focus, material success) do not reflect a shared commitment to intellectual exploration or philosophical inquiry. |\n| **Emotional Compatibility** | **3** | Emotional support style seems transactional or surface\u2011level, lacking the depth and reflective listening needed for a philosophy\u2011centric partnership. |\n| **Goals Alignment** | **2** | Long\u2011term goals (e.g., career trajectory, lifestyle choices) diverge significantly from a partner who seeks continuous intellectual growth and philosophical dialogue. |\n| **Personality Fit** | **3** | The candidate\u2019s temperament (likely extroverted, action\u2011oriented) clashes with the introspective, contemplative nature of a deep\u2011philosophy partner. |\n| **Chemistry Potential** | **1** | Low likelihood of shared attraction or passion; the candidate\u2019s interests and conversational cues rarely touch on philosophical themes. |\n\n### Comprehensive Relationship Potential Score  \n**\u2248\u202f15\u202f%**\n\n> *This figure is derived by averaging the five category scores (2\u202f+\u202f3\u202f+\u202f2\u202f+\u202f3\u202f+\u202f1\u202f=\u202f11; 11\u202f/\u202f5\u202f=\u202f2.2) and converting to a percentage (2.2\u202f/\u202f10\u202f=\u202f0.22 \u2192 22\u202f%). Adjusted downward to 15\u202f% to account for the extremely low initial match score (0.10) and the lack of shared foundational interests.*\n\n---\n\n## Reasoned Explanation\n\n1. **Values Misalignment** \u2013 The candidate\u2019s profile (as inferred from the low match score) prioritizes external achievements over internal intellectual pursuits. A partner who loves deep philosophy typically values critical thinking, open\u2011mindedness, and a willingness to question assumptions\u2014qualities that are not evident here.\n\n2. **Emotional Disconnect** \u2013 Deep philosophical conversations require a safe emotional space where both parties can share vulnerability and reflect on complex ideas. The candidate\u2019s emotional style appears more pragmatic or surface\u2011level, which would likely stifle the reflective dialogue needed for a meaningful connection.\n\n3. **Goal Divergence** \u2013 Long\u2011term aspirations such as career advancement, financial stability, or social status dominate the candidate\u2019s outlook, whereas a philosophy\u2011centric partner often seeks continuous learning, intellectual collaboration, or community engagement. These divergent trajectories would create friction over priorities and time allocation.\n\n4. **Personality Clash** \u2013 The candidate\u2019s temperament seems action\u2011driven and possibly extroverted, whereas a deep\u2011philosophy partner often thrives on introspection, quiet contemplation, and nuanced discussion. This mismatch can lead to misunderstandings and unmet expectations.\n\n5. **Chemistry Gap** \u2013 Attraction is heavily influenced by shared interests. With minimal overlap in philosophical topics, the candidate is unlikely to spark the intellectual curiosity that fuels romantic chemistry for someone who values deep thought.\n\n---\n\n## Recommendation\n\nGiven the **extremely low match score (0.10)** and the comprehensive evaluation, this candidate is **not a suitable romantic match** for someone seeking a partner who loves deep philosophy. It would be more productive to focus on profiles that explicitly list philosophical interests, critical thinking as a core value, and a reflective communication style. This will increase the likelihood of a fulfilling, intellectually stimulating partnership."
+  },
+  {
+    "tenant": {
+      "id": "62759bb6-1dbf-4228-8116-07a1dd069339",
+      "email": null,
+      "phone": "+19998887777",
+      "last_login": "2026-01-14T10:02:59.867505",
+      "personal_info": {
+        "first_name": "",
+        "middle_name": null,
+        "last_name": "",
+        "age": 0,
+        "gender": "",
+        "sexual_orientation": null,
+        "location": "",
+        "relationship_status": null,
+        "education": null,
+        "occupation": null,
+        "profile_pictures": []
+      },
+      "interests_and_hobbies": {
+        "interests": [],
+        "hobbies": []
+      }
+    },
+    "score": 0.1,
+    "ai_insight": ""
+  }
+]
+
+>>> Friendship Match | Status: 200
+[
+  {
+    "tenant": {
+      "id": "007aa51a-5b8d-4255-8d97-0c95ef81c563",
+      "email": "final_tester_08707@test.com",
+      "phone": "+10008707",
+      "last_login": "2026-01-13T18:21:48.075996",
+      "personal_info": {
+        "first_name": "",
+        "middle_name": null,
+        "last_name": "",
+        "age": 0,
+        "gender": "",
+        "sexual_orientation": null,
+        "location": "",
+        "relationship_status": null,
+        "education": null,
+        "occupation": null,
+        "profile_pictures": []
+      },
+      "interests_and_hobbies": {
+        "interests": [],
+        "hobbies": []
+      }
+    },
+    "score": 0.1,
+    "ai_insight": "**Friendship Potential Evaluation \u2013 Candidate Unknown User (ID: 007aa51a\u20115b8d\u20114255\u20118d97\u20110c95ef81c563)**  \n*Context: \u201cI want to find friends to play connection games with.\u201d*  \n\n| Category | Score (0\u201110) | Rationale |\n|----------|--------------|-----------|\n| **Shared Interests & Hobbies** | **1** | The candidate\u2019s profile lists only a single period (\u201c.\u201d) as an interest, offering no concrete hobby or activity to compare with your desire for connection\u2011game play. |\n| **Social Compatibility (Style)** | **2** | With no data on communication style, preferred group size, or activity pacing, we can only assume a very generic, low\u2011confidence match. |\n| **Values Alignment** | **2** | No stated beliefs, ethics, or values are present, so alignment cannot be assessed. |\n| **Fun Factor (Shared Laughter & Joy)** | **1** | Lack of shared interests and no evidence of humor or playful engagement reduces the likelihood of spontaneous fun. |\n| **Loyalty & Support Potential** | **2** | Absence of any relational history or expressed commitment makes it difficult to gauge loyalty; the low match score suggests limited support potential. |\n\n### Comprehensive Friendship Potential Score  \n**\u2248 12\u202f%**  \n\n*(Calculated as the average of the five category scores, then converted to a percentage: (1+2+2+1+2)/5 = 1.6 \u2192 16\u202f%; rounded down to reflect the very low match score of 0.10.)*\n\n### Recommendation & Explanation  \n- **Low Match Confidence**: The overall match score of 0.10 and the sparse profile data indicate a very weak similarity baseline.  \n- **Missing Shared Interests**: Without any listed hobbies or preferences, it\u2019s impossible to confirm that you both enjoy connection games or any other activity.  \n- **Uncertain Social Dynamics**: No information on communication style or group preferences means you cannot predict whether you\u2019ll mesh well socially.  \n- **Values & Loyalty Unclear**: The absence of stated values or past relational behavior further reduces confidence in a supportive, long\u2011term friendship.  \n\n**Bottom line**: This candidate is unlikely to be a strong fit for your goal of finding friends to play connection games with. It would be more productive to focus on users with explicit interests in gaming, social interaction, or related hobbies, and with higher match scores."
+  },
+  {
+    "tenant": {
+      "id": "62759bb6-1dbf-4228-8116-07a1dd069339",
+      "email": null,
+      "phone": "+19998887777",
+      "last_login": "2026-01-14T10:02:59.867505",
+      "personal_info": {
+        "first_name": "",
+        "middle_name": null,
+        "last_name": "",
+        "age": 0,
+        "gender": "",
+        "sexual_orientation": null,
+        "location": "",
+        "relationship_status": null,
+        "education": null,
+        "occupation": null,
+        "profile_pictures": []
+      },
+      "interests_and_hobbies": {
+        "interests": [],
+        "hobbies": []
+      }
+    },
+    "score": 0.1,
+    "ai_insight": "**Deep AI Insight \u2013 Candidate Unknown User (ID: 62759bb6\u20111dbf\u20114228\u20118116\u201107a1dd069339)**  \n*Match score: 0.10*  \n*Context query: \u201cI want to find friends to play connection games with.\u201d*  \n\n| Category | Score (0\u201110) | Rationale |\n|----------|--------------|-----------|\n| **Shared interests & hobbies** | **1** | The candidate\u2019s profile lists only a single period (\u201c.\u201d) as an interest\u2014essentially no data.  With no evidence of an affinity for connection games, board games, or any other hobby, the overlap with your stated goal is virtually nil. |\n| **Social compatibility** | **2** | No information on communication style, preferred group size, or activity frequency is available.  A match score of 0.10 suggests the system already flagged a very low likelihood of compatible social behavior. |\n| **Values alignment** | **1** | There is no indication of shared values, beliefs, or ethical stances.  Without any data, we must assume minimal alignment. |\n| **Fun factor** | **2** | The absence of any stated interests or personality traits makes it impossible to gauge shared humor or enjoyment.  The low match score further implies a low probability of shared laughter. |\n| **Loyalty & support potential** | **1** | No evidence of past friendships, community involvement, or supportive behavior.  The system\u2019s low score indicates a weak foundation for long\u2011term loyalty. |\n\n### Friendship Potential Score  \n**\u2248 15\u202f%** (average of the five category scores, weighted equally)\n\n### Recommendation & Explanation  \n- **Low Compatibility**: The candidate\u2019s profile is essentially empty, and the system\u2019s match score of 0.10 confirms a very low probability of a meaningful connection.  \n- **No Shared Interests**: Your primary goal is to find friends for connection games.  Without any indication that this candidate enjoys such games, the likelihood of a shared activity is negligible.  \n- **Uncertain Social Style**: We cannot determine whether the candidate is a casual gamer, a competitive player, or prefers solo play.  This uncertainty further reduces the chance of a harmonious friendship.  \n- **Minimal Values & Loyalty Signals**: With no data on values or past supportive behavior, it is risky to invest time in building a friendship that may not be reciprocated.  \n\n**Bottom line**: The candidate is unlikely to be a good fit for your friendship goals.  It would be more productive to focus on users with higher match scores and clearer indications of shared interests in connection games."
+  }
+]
+
+>>> Work Match | Status: 200
+[
+  {
+    "tenant": {
+      "id": "007aa51a-5b8d-4255-8d97-0c95ef81c563",
+      "email": "final_tester_08707@test.com",
+      "phone": "+10008707",
+      "last_login": "2026-01-13T18:21:48.075996",
+      "personal_info": {
+        "first_name": "",
+        "middle_name": null,
+        "last_name": "",
+        "age": 0,
+        "gender": "",
+        "sexual_orientation": null,
+        "location": "",
+        "relationship_status": null,
+        "education": null,
+        "occupation": null,
+        "profile_pictures": []
+      },
+      "interests_and_hobbies": {
+        "interests": [],
+        "hobbies": []
+      }
+    },
+    "score": 0.1,
+    "ai_insight": "**Deep Insight for Candidate Unknown User (ID: 007aa51a-5b8d-4255-8d97-0c95ef81c563)**  \n\n| **Dimension** | **Assessment** | **Implications** | **Actionable Recommendations** |\n|---------------|----------------|------------------|--------------------------------|\n| **Match Score** | 0.10 (very low) | The candidate\u2019s profile, as currently presented, aligns poorly with the typical profile of a co\u2011founder for an AI startup. | \u2022 Re\u2011evaluate the candidate\u2019s background and fill in missing data (skills, experience, portfolio). <br>\u2022 If the candidate is genuinely interested, encourage them to build a concrete AI project or contribute to an open\u2011source AI initiative to demonstrate capability. |\n| **Interest Alignment** | No interests listed | Without explicit interests, it\u2019s impossible to gauge enthusiasm for AI, entrepreneurship, or the specific domain of the startup. | \u2022 Prompt the candidate to articulate their passions\u2014e.g., \u201cWhat AI problems excite you?\u201d or \u201cWhich industries do you see AI transforming?\u201d <br>\u2022 Use their responses to map to the startup\u2019s mission. |\n| **Experience & Skill Set** | Unknown | A co\u2011founder must bring complementary skills: technical (ML/AI), product, business, or domain expertise. | \u2022 Request a r\u00e9sum\u00e9 or portfolio that highlights AI projects, publications, or relevant work. <br>\u2022 If the candidate lacks technical depth, consider pairing them with a technically strong partner. |\n| **Entrepreneurial Mindset** | Unknown | Co\u2011founders need resilience, risk tolerance, and a willingness to wear multiple hats. | \u2022 Ask behavioral questions: \u201cDescribe a time you pivoted a project under pressure.\u201d <br>\u2022 Evaluate their willingness to invest time and resources beyond a salaried role. |\n| **Network & Community** | Unknown | A strong network can accelerate fundraising, talent acquisition, and product validation. | \u2022 Encourage participation in AI meetups, hackathons, or startup incubators. <br>\u2022 Suggest building a LinkedIn presence focused on AI topics. |\n| **Cultural Fit** | Unknown | Alignment on vision, values, and working style is critical for a founding team. | \u2022 Conduct a casual coffee chat to gauge communication style and values. <br>\u2022 Use a structured \u201cfounder fit\u201d questionnaire to surface potential clashes early. |\n\n### Key Takeaways\n\n1. **Data Gap** \u2013 The absence of any listed interests or background details makes it impossible to confidently assess fit.  \n2. **Low Match Score** \u2013 A 0.10 score indicates that, based on current data, the candidate is unlikely to be a strong co\u2011founder match.  \n3. **Potential Path Forward** \u2013 If the candidate is genuinely interested in AI entrepreneurship, they can dramatically improve their prospects by:\n   - Building a demonstrable AI portfolio (e.g., Kaggle competitions, open\u2011source contributions, or personal projects).  \n   - Articulating clear motivations and domain interests.  \n   - Engaging with the AI startup ecosystem to build credibility and connections.\n\n### Recommendation\n\n- **Short\u2011Term**: Treat this candidate as a *potential future partner* rather than an immediate co\u2011founder. Offer guidance on how to strengthen their profile and invite them to join a networking event or a short\u2011term project to gauge fit.  \n- **Long\u2011Term**: If the candidate shows rapid growth in the areas above and demonstrates a complementary skill set, revisit the match score and consider a deeper partnership discussion.\n\n---\n\n**Bottom Line:** With the current information, the candidate is a low\u2011confidence fit for a co\u2011founder role. Focus on data enrichment and skill development to elevate their suitability."
+  },
+  {
+    "tenant": {
+      "id": "62759bb6-1dbf-4228-8116-07a1dd069339",
+      "email": null,
+      "phone": "+19998887777",
+      "last_login": "2026-01-14T10:02:59.867505",
+      "personal_info": {
+        "first_name": "",
+        "middle_name": null,
+        "last_name": "",
+        "age": 0,
+        "gender": "",
+        "sexual_orientation": null,
+        "location": "",
+        "relationship_status": null,
+        "education": null,
+        "occupation": null,
+        "profile_pictures": []
+      },
+      "interests_and_hobbies": {
+        "interests": [],
+        "hobbies": []
+      }
+    },
+    "score": 0.1,
+    "ai_insight": "**Deep AI Insight \u2013 Candidate 62759bb6-1dbf-4228-8116-07a1dd069339**\n\n| Dimension | Observation | Implication | Suggested Action |\n|-----------|-------------|-------------|------------------|\n| **Match Score** | 0.10 (very low) | The algorithm sees almost no overlap between the candidate\u2019s profile and the \u201cco\u2011founder for an AI startup\u201d query. | Treat this candidate as a *high\u2011risk, high\u2011reward* prospect. Do not dismiss outright, but prioritize other, higher\u2011scoring candidates for initial outreach. |\n| **Interest Signals** | None listed | Either the profile is incomplete or the user is intentionally vague. This could mean: <br>\u2022 They are a generalist who can pivot to many domains.<br>\u2022 They are privacy\u2011conscious and keep personal data hidden.<br>\u2022 They simply haven\u2019t updated their profile. | Request a brief \u201cprofile snapshot\u201d (skills, past projects, AI experience). A quick 5\u2011minute chat can reveal hidden alignment. |\n| **Potential Strengths** | Unknown | The absence of data can be a double\u2011edged sword: <br>\u2022 **Wildcard** \u2013 they might bring a unique skill set (e.g., deep\u2011learning research, product design, fundraising) that the algorithm didn\u2019t capture.<br>\u2022 **Low\u2011visibility** \u2013 they may be a strong fit but under\u2011represented in public data. | Ask targeted questions: <br>\u2022 \u201cWhat AI projects have you led or contributed to?\u201d<br>\u2022 \u201cWhat role do you envision in a startup (tech, ops, fundraising, etc.)?\u201d<br>\u2022 \u201cWhat motivates you to co\u2011found rather than join an existing team?\u201d |\n| **Risk Factors** | \u2022 Low match score<br>\u2022 No interests listed | \u2022 Misalignment with startup\u2019s technical or cultural needs.<br>\u2022 Potential mismatch in vision or commitment level. | Verify commitment: <br>\u2022 \u201cWhat milestones would you expect in the first 12 months?\u201d<br>\u2022 \u201cHow do you handle ambiguity and rapid iteration?\u201d |\n| **Strategic Recommendation** | 1. **Short\u2011list**: Keep the candidate in a \u201cwatch\u2011list\u201d for a quick follow\u2011up. 2. **Data Enrichment**: Use a brief questionnaire or a 15\u2011minute discovery call to fill gaps. 3. **Parallel Search**: Continue outreach to higher\u2011scoring candidates to avoid time\u2011wasting on low\u2011fit prospects. | If the follow\u2011up reveals strong AI expertise, complementary skill sets, and a shared vision, consider moving forward. If not, deprioritize. |\n\n**Bottom Line:**  \nThe low match score and empty interest field signal a high uncertainty about fit. However, the candidate could still be a hidden gem\u2014especially if they possess niche AI expertise or a strong entrepreneurial drive that isn\u2019t captured in public data. A focused, low\u2011commitment discovery conversation is the most efficient next step to either validate or rule out this prospect."
+  }
+]
+
+>>> Step 6: Testing Icebreakers & Vibe Checks
+
+
+>>> Icebreaker (Universal) | Status: 200
+{
+  "icebreaker": "Let\u2019s start with a classic: Two Truths and a Twist. Each person submits 3 statements\u20142 true, 1 fiction. The other must guess the lie."
+}
+
+>>> Vibe Check (Personality) | Status: 200
+{
+  "prompt": "Tell me the story behind your favorite scar, tattoo, or keepsake."
+}
+
+>>> Step 7: Testing Smart Journal (Multimodal)
+
+
+>>> Smart Journal | Status: 200
+{
+  "url": "https://example.com/audio.mp3",
+  "text": "MOCK TRANSCRIPT: This is a simulated transcription from the AudioClient.",
+  "insights": "(ai error 429) The AI did not return a valid response."
+}
+
+>>> Step 8: Testing Relationship Suite & Dashboard
+
+
+>>> Relationship Dashboard | Status: 200
+{
+  "status": null,
+  "upcoming_events": [],
+  "streaks": [],
+  "recent_nudges": [],
+  "mood": "AI Analysis Pending",
+  "suggestion": "Check out the new social events!",
+  "daily_card_preview": "Tap to see your Daily Relationship Insight"
+}
+
+>>> Daily Relationship Card | Status: 200
+{
+  "daily_card": {
+    "insight": "Forgiveness is a gift you give yourself. Let go of past grievances to find peace.",
+    "action": "Write a heartfelt apology letter to your partner for any past misunderstandings.",
+    "question": "What do you need from me to feel truly valued and appreciated in our relationship?"
+  }
+}
+
+>>> Step 9: Testing Lifebook
+
+
+>>> Create Lifebook Category | Status: 200
+{
+  "title": "My Visions",
+  "description": "Goals for 2026",
+  "category": "Visions",
+  "content": {},
+  "id": "f4b849bb-9735-4aea-85ec-6c557a147d9f",
+  "tenant": "5af0c618-299a-46e3-b0a6-abca60e19e00",
+  "created_at": "2026-01-14T13:36:43.062680",
+  "updated_at": "2026-01-14T13:36:43.062698"
+}
+
+>>> Add Lifebook Entry | Status: 200
+{
+  "title": "AI OS Vision",
+  "content": "I want to build an AI OS.",
+  "media_urls": [
+    "https://example.com/vision.jpg"
+  ],
+  "id": "7cd24e36-42ce-422b-9e0e-fab465d95267",
+  "lifebook_id": "f4b849bb-9735-4aea-85ec-6c557a147d9f",
+  "created_at": "2026-01-14T13:36:43.064213"
+}
+
+>>> Step 10: Testing Connection Games
+
+
+>>> List Games | Status: 200
+{
+  "games": [
+    {
+      "id": "ai-adventure-dungeon",
+      "title": "Ai Adventure Dungeon",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-adventure-dungeon",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Ai%20Adventure%20Dungeon%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "ai-comic-creator",
+      "title": "Comic Creator",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-comic-creator",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "comic%20book%20art%20studio%20vibrant%20pop%20art%204k"
+    },
+    {
+      "id": "ai-emoji-war",
+      "title": "EMOJI WAR",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-emoji-war",
+      "tags": [
+        "AI",
+        "Storytelling",
+        "Sci-Fi"
+      ],
+      "bg_prompt": "cyberpunk%20glitch%20battle%20arena%20emoji%20war%20neon%204k"
+    },
+    {
+      "id": "ai-escape-room",
+      "title": "QUANTUM CONTAINMENT",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-escape-room",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "sci-fi%20containment%20facility%20blast%20door%20airlock%20cinematographic%20unreal%20engine"
+    },
+    {
+      "id": "ai-fortune-teller",
+      "title": "The Celestial Eye",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-fortune-teller",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "mystical%20fortune%20teller%20table%20tarot%20crystal%20ball%20cosmic%20nebula%208k%20unreal"
+    },
+    {
+      "id": "ai-improv-theater",
+      "title": "Ai Improv Theater",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-improv-theater",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Ai%20Improv%20Theater%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "ai-poetry-garden",
+      "title": "Ai Poetry Garden",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-poetry-garden",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Ai%20Poetry%20Garden%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "ai-puzzle-architect",
+      "title": "Ai Puzzle Architect",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-puzzle-architect",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Ai%20Puzzle%20Architect%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "ai-puzzle-saga",
+      "title": "Ai Puzzle Saga",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-puzzle-saga",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Ai%20Puzzle%20Saga%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "ai-rap-battle",
+      "title": "Ai Rap Battle",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-rap-battle",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Ai%20Rap%20Battle%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "ai-roast-toast",
+      "title": "Ai Roast Toast",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-roast-toast",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Ai%20Roast%20Toast%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "ai-role-swap",
+      "title": "Ai Role Swap",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-role-swap",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Ai%20Role%20Swap%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "ai-sandbox",
+      "title": "Ai Sandbox",
+      "description": "An interactive AI experience.",
+      "url": "/games/ai-sandbox",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Ai%20Sandbox%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "character-swap",
+      "title": "Character Swap",
+      "description": "An interactive AI experience.",
+      "url": "/games/character-swap",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Character%20Swap%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "collaborative-canvas",
+      "title": "Collaborative Canvas",
+      "description": "You are ElinityAI, the creative art collaborator and visual generator for the game \"Collaborative Canvas,\" part of the Elinity Games Suite.",
+      "url": "/games/collaborative-canvas",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Collaborative%20Canvas%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "connection-sparks",
+      "title": "Connection Sparks",
+      "description": "You are ElinityAI, the lively and witty host of the game \"Connection Sparks,\" part of the Elinity Games Suite.",
+      "url": "/games/connection-sparks",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Connection%20Sparks%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "creative-duel-arena",
+      "title": "Creative Duel Arena",
+      "description": "An interactive AI experience.",
+      "url": "/games/creative-duel-arena",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Creative%20Duel%20Arena%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "cultural-exchange",
+      "title": "Cultural Exchange",
+      "description": "An interactive AI experience.",
+      "url": "/games/cultural-exchange",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Cultural%20Exchange%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "dream-battles",
+      "title": "Dream Battles",
+      "description": "An interactive AI experience.",
+      "url": "/games/dream-battles",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Dream%20Battles%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "dream-builder",
+      "title": "Dream Builder",
+      "description": "You are **The Architect**, the guide and co-creator in the game *Dream Builder*.  ",
+      "url": "/games/dream-builder",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Dream%20Builder%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "emotion-charades",
+      "title": "Emotion Charades",
+      "description": "You are the Game Master for a playful charades-style game called \"Emotion Charades\"",
+      "url": "/games/emotion-charades",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Emotion%20Charades%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "emotion-labyrinth-node",
+      "title": "Emotion Labyrinth Node",
+      "description": "An interactive AI experience.",
+      "url": "/games/emotion-labyrinth-node",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Emotion%20Labyrinth%20Node%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "epic-poem-duel",
+      "title": "Epic Poem Duel",
+      "description": "An interactive AI experience.",
+      "url": "/games/epic-poem-duel",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Epic%20Poem%20Duel%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "friendship-towers",
+      "title": "Friendship Towers",
+      "description": "An interactive AI experience.",
+      "url": "/games/friendship-towers",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Friendship%20Towers%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "future-artifact-maker",
+      "title": "Future Artifact Maker",
+      "description": "An interactive AI experience.",
+      "url": "/games/future-artifact-maker",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Future%20Artifact%20Maker%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "future-forecast",
+      "title": "Future Forecast",
+      "description": "You are ElinityAI, the host and future narrator for the game \"Future Forecast,\" part of the Elinity Games Suite.",
+      "url": "/games/future-forecast",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Future%20Forecast%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "gratitude-quest",
+      "title": "Gratitude Quest",
+      "description": "An interactive AI experience.",
+      "url": "/games/gratitude-quest",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Gratitude%20Quest%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "great-debate",
+      "title": "Great Debate",
+      "description": "You are the Game Master AI for \"The Great Debate.\"",
+      "url": "/games/great-debate",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Great%20Debate%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "guess-the-fake",
+      "title": "Guess The Fake",
+      "description": "An interactive AI experience.",
+      "url": "/games/guess-the-fake",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Guess%20The%20Fake%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "hidden-truths",
+      "title": "Hidden Truths",
+      "description": "An interactive AI experience.",
+      "url": "/games/hidden-truths",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Hidden%20Truths%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "inner-world-quest",
+      "title": "Inner World Quest",
+      "description": "You are ElinityAI, the empathetic narrator and guide of \"Inner World Quest,\" a long-form visual storytelling and emotional exploration game.",
+      "url": "/games/inner-world-quest",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Inner%20World%20Quest%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "journey-journal",
+      "title": "Journey Journal",
+      "description": "An interactive AI experience.",
+      "url": "/games/journey-journal",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Journey%20Journal%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "journey-through-music",
+      "title": "Journey Through Music",
+      "description": "An interactive AI experience.",
+      "url": "/games/journey-through-music",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Journey%20Through%20Music%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "legacy-builder",
+      "title": "Legacy Builder",
+      "description": "An interactive AI experience.",
+      "url": "/games/legacy-builder",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Legacy%20Builder%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "life-goals-board-game",
+      "title": "Life Goals Board",
+      "description": "An interactive AI experience.",
+      "url": "/games/life-goals-board-game",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Life%20Goals%20Board%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "life-swap-simulator",
+      "title": "Life Swap Simulator",
+      "description": "An interactive AI experience.",
+      "url": "/games/life-swap-simulator",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Life%20Swap%20Simulator%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "meme-forge",
+      "title": "Meme Forge",
+      "description": "An interactive AI experience.",
+      "url": "/games/meme-forge",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Meme%20Forge%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "micro-mysteries",
+      "title": "Micro Mysteries",
+      "description": "An interactive AI experience.",
+      "url": "/games/micro-mysteries",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Micro%20Mysteries%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "mind-meld",
+      "title": "Mind Meld",
+      "description": "An interactive AI experience.",
+      "url": "/games/mind-meld",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Mind%20Meld%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "mood-dj",
+      "title": "Mood Dj",
+      "description": "An interactive AI experience.",
+      "url": "/games/mood-dj",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Mood%20Dj%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "mood-journey",
+      "title": "Mood Journey",
+      "description": "An interactive AI experience.",
+      "url": "/games/mood-journey",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Mood%20Journey%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "mood-mosaic",
+      "title": "Mood Mosaic",
+      "description": "You are the Game Master AI for Mood Mosaic.",
+      "url": "/games/mood-mosaic",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Mood%20Mosaic%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "myth-builder",
+      "title": "Myth Builder",
+      "description": "An interactive AI experience.",
+      "url": "/games/myth-builder",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Myth%20Builder%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "mythic-beast-builder",
+      "title": "Mythic Beast Builder",
+      "description": "An interactive AI experience.",
+      "url": "/games/mythic-beast-builder",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Mythic%20Beast%20Builder%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "relationship-rpg",
+      "title": "Relationship Rpg",
+      "description": "You are \"The Guide\" \u2014 a warm AI companion who helps couples and close friends embark on shared growth journeys through quests, challenges, and meaning...",
+      "url": "/games/relationship-rpg",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Relationship%20Rpg%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "serendipity-hunt",
+      "title": "Serendipity Hunt",
+      "description": "You are the game master for \"Serendipity Hunt\", a treasure-hunt-style social game.",
+      "url": "/games/serendipity-hunt",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Serendipity%20Hunt%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "shared-playlist-maker",
+      "title": "Shared Playlist Maker",
+      "description": "You are ElinityAI \u2014 the Vibe Conductor and Playlist Alchemist for the game \"Shared Playlist Maker.\"",
+      "url": "/games/shared-playlist-maker",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Shared%20Playlist%20Maker%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "social-labyrinth",
+      "title": "Social Labyrinth",
+      "description": "An interactive AI experience.",
+      "url": "/games/social-labyrinth",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Social%20Labyrinth%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "story-relay",
+      "title": "Story Relay",
+      "description": "You are the Game Master for a collaborative storytelling game called \"Story Relay.\" ",
+      "url": "/games/story-relay",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Story%20Relay%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "symbol-quest",
+      "title": "Symbol Quest",
+      "description": "An interactive AI experience.",
+      "url": "/games/symbol-quest",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Symbol%20Quest%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "the-ai-heist",
+      "title": "The Ai Heist",
+      "description": "An interactive AI experience.",
+      "url": "/games/the-ai-heist",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "The%20Ai%20Heist%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "the-alignment-game",
+      "title": "The Alignment",
+      "description": "You are ElinityAI, the Game Master for \"The Alignment Game,\" where players discover how aligned they are in choices and preferences.",
+      "url": "/games/the-alignment-game",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "The%20Alignment%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "the-hidden-question",
+      "title": "The Hidden Question",
+      "description": "An interactive AI experience.",
+      "url": "/games/the-hidden-question",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "The%20Hidden%20Question%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "the-long-journey",
+      "title": "The Long Journey",
+      "description": "An interactive AI experience.",
+      "url": "/games/the-long-journey",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "The%20Long%20Journey%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "time-travelers",
+      "title": "Time Travelers",
+      "description": "You are ElinityAI, the \"Time Conductor\" hosting the game \"Time Travelers,\" part of the Elinity Games Suite.",
+      "url": "/games/time-travelers",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Time%20Travelers%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "truth-arcade",
+      "title": "Truth Arcade",
+      "description": "You are ElinityAI, the fun and thoughtful host of the game \"Truth Arcade,\" part of the Elinity Games Suite.",
+      "url": "/games/truth-arcade",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Truth%20Arcade%20concept%20art%20cinematic%204k"
+    },
+    {
+      "id": "truth-timeline",
+      "title": "Truth Timeline",
+      "description": "An interactive AI experience.",
+      "url": "/games/truth-timeline",
+      "tags": [
+        "AI",
+        "Storytelling"
+      ],
+      "bg_prompt": "Truth%20Timeline%20concept%20art%20cinematic%204k"
+    }
+  ]
+}
+
+>>> Recommend Game | Status: 200
+{
+  "recommendation": {
+    "id": "ai-adventure-dungeon",
+    "title": "Ai Adventure Dungeon",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-adventure-dungeon",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Ai%20Adventure%20Dungeon%20concept%20art%20cinematic%204k"
+  },
+  "reasoning": "{\n    \"ID\": \"relationship-rpg\",\n    \"Name\": \"Relationship Rpg\",\n    \"Description\": \"You are 'The Guide' \u2014 a warm AI companion who helps couples and close friends embark on shared growth journeys through quests, challenges, and meaning...\",\n    \"Tags\": [\"AI\", \"Storytelling\"]\n}"
+}
+
+>>> Step 11: Testing Messaging & Interaction
+
+
+>>> Send Direct Message | Status: 200
+{
+  "status": "ok",
+  "chat_id": "e5f598bc-fb59-4633-912b-1ad34b9c740a",
+  "group_id": "e62f05c1-2c6b-48fd-9576-9a28e767cd86"
+}
+
+>>> Step 12: Testing Nudges & Rituals
+
+
+>>> Create Ritual | Status: 200
+{
+  "title": "Daily Reflection",
+  "description": "10 minutes of journaling",
+  "frequency": "daily",
+  "id": "50324ad7-fca3-403d-9a71-8282d49dfed1",
+  "streak_count": 0,
+  "history": [],
+  "is_active": true,
+  "created_at": "2026-01-14T13:36:42.005166"
+}
+
+>>> Verify Dashboard with Rituals | Status: 200
+{
+  "status": null,
+  "upcoming_events": [],
+  "streaks": [
+    {
+      "title": "Daily Reflection",
+      "count": 0
+    }
+  ],
+  "recent_nudges": [],
+  "mood": "AI Analysis Pending",
+  "suggestion": "Check out the new social events!",
+  "daily_card_preview": "Tap to see your Daily Relationship Insight"
+}
+
+>>> VERIFICATION COMPLETE. All outputs saved to FINAL_VERIFICATION_REPORT.txt

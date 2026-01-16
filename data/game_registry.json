@@ -1,0 +1,630 @@
+[
+  {
+    "id": "ai-adventure-dungeon",
+    "title": "Ai Adventure Dungeon",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-adventure-dungeon",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Ai%20Adventure%20Dungeon%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "ai-comic-creator",
+    "title": "Comic Creator",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-comic-creator",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "comic%20book%20art%20studio%20vibrant%20pop%20art%204k"
+  },
+  {
+    "id": "ai-emoji-war",
+    "title": "EMOJI WAR",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-emoji-war",
+    "tags": [
+      "AI",
+      "Storytelling",
+      "Sci-Fi"
+    ],
+    "bg_prompt": "cyberpunk%20glitch%20battle%20arena%20emoji%20war%20neon%204k"
+  },
+  {
+    "id": "ai-escape-room",
+    "title": "QUANTUM CONTAINMENT",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-escape-room",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "sci-fi%20containment%20facility%20blast%20door%20airlock%20cinematographic%20unreal%20engine"
+  },
+  {
+    "id": "ai-fortune-teller",
+    "title": "The Celestial Eye",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-fortune-teller",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "mystical%20fortune%20teller%20table%20tarot%20crystal%20ball%20cosmic%20nebula%208k%20unreal"
+  },
+  {
+    "id": "ai-improv-theater",
+    "title": "Ai Improv Theater",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-improv-theater",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Ai%20Improv%20Theater%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "ai-poetry-garden",
+    "title": "Ai Poetry Garden",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-poetry-garden",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Ai%20Poetry%20Garden%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "ai-puzzle-architect",
+    "title": "Ai Puzzle Architect",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-puzzle-architect",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Ai%20Puzzle%20Architect%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "ai-puzzle-saga",
+    "title": "Ai Puzzle Saga",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-puzzle-saga",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Ai%20Puzzle%20Saga%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "ai-rap-battle",
+    "title": "Ai Rap Battle",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-rap-battle",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Ai%20Rap%20Battle%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "ai-roast-toast",
+    "title": "Ai Roast Toast",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-roast-toast",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Ai%20Roast%20Toast%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "ai-role-swap",
+    "title": "Ai Role Swap",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-role-swap",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Ai%20Role%20Swap%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "ai-sandbox",
+    "title": "Ai Sandbox",
+    "description": "An interactive AI experience.",
+    "url": "/games/ai-sandbox",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Ai%20Sandbox%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "character-swap",
+    "title": "Character Swap",
+    "description": "An interactive AI experience.",
+    "url": "/games/character-swap",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Character%20Swap%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "collaborative-canvas",
+    "title": "Collaborative Canvas",
+    "description": "You are ElinityAI, the creative art collaborator and visual generator for the game \"Collaborative Canvas,\" part of the Elinity Games Suite.",
+    "url": "/games/collaborative-canvas",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Collaborative%20Canvas%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "connection-sparks",
+    "title": "Connection Sparks",
+    "description": "You are ElinityAI, the lively and witty host of the game \"Connection Sparks,\" part of the Elinity Games Suite.",
+    "url": "/games/connection-sparks",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Connection%20Sparks%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "creative-duel-arena",
+    "title": "Creative Duel Arena",
+    "description": "An interactive AI experience.",
+    "url": "/games/creative-duel-arena",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Creative%20Duel%20Arena%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "cultural-exchange",
+    "title": "Cultural Exchange",
+    "description": "An interactive AI experience.",
+    "url": "/games/cultural-exchange",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Cultural%20Exchange%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "dream-battles",
+    "title": "Dream Battles",
+    "description": "An interactive AI experience.",
+    "url": "/games/dream-battles",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Dream%20Battles%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "dream-builder",
+    "title": "Dream Builder",
+    "description": "You are **The Architect**, the guide and co-creator in the game *Dream Builder*.  ",
+    "url": "/games/dream-builder",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Dream%20Builder%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "emotion-charades",
+    "title": "Emotion Charades",
+    "description": "You are the Game Master for a playful charades-style game called \"Emotion Charades\"",
+    "url": "/games/emotion-charades",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Emotion%20Charades%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "emotion-labyrinth-node",
+    "title": "Emotion Labyrinth Node",
+    "description": "An interactive AI experience.",
+    "url": "/games/emotion-labyrinth-node",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Emotion%20Labyrinth%20Node%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "epic-poem-duel",
+    "title": "Epic Poem Duel",
+    "description": "An interactive AI experience.",
+    "url": "/games/epic-poem-duel",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Epic%20Poem%20Duel%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "friendship-towers",
+    "title": "Friendship Towers",
+    "description": "An interactive AI experience.",
+    "url": "/games/friendship-towers",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Friendship%20Towers%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "future-artifact-maker",
+    "title": "Future Artifact Maker",
+    "description": "An interactive AI experience.",
+    "url": "/games/future-artifact-maker",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Future%20Artifact%20Maker%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "future-forecast",
+    "title": "Future Forecast",
+    "description": "You are ElinityAI, the host and future narrator for the game \"Future Forecast,\" part of the Elinity Games Suite.",
+    "url": "/games/future-forecast",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Future%20Forecast%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "gratitude-quest",
+    "title": "Gratitude Quest",
+    "description": "An interactive AI experience.",
+    "url": "/games/gratitude-quest",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Gratitude%20Quest%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "great-debate",
+    "title": "Great Debate",
+    "description": "You are the Game Master AI for \"The Great Debate.\"",
+    "url": "/games/great-debate",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Great%20Debate%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "guess-the-fake",
+    "title": "Guess The Fake",
+    "description": "An interactive AI experience.",
+    "url": "/games/guess-the-fake",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Guess%20The%20Fake%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "hidden-truths",
+    "title": "Hidden Truths",
+    "description": "An interactive AI experience.",
+    "url": "/games/hidden-truths",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Hidden%20Truths%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "inner-world-quest",
+    "title": "Inner World Quest",
+    "description": "You are ElinityAI, the empathetic narrator and guide of \"Inner World Quest,\" a long-form visual storytelling and emotional exploration game.",
+    "url": "/games/inner-world-quest",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Inner%20World%20Quest%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "journey-journal",
+    "title": "Journey Journal",
+    "description": "An interactive AI experience.",
+    "url": "/games/journey-journal",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Journey%20Journal%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "journey-through-music",
+    "title": "Journey Through Music",
+    "description": "An interactive AI experience.",
+    "url": "/games/journey-through-music",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Journey%20Through%20Music%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "legacy-builder",
+    "title": "Legacy Builder",
+    "description": "An interactive AI experience.",
+    "url": "/games/legacy-builder",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Legacy%20Builder%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "life-goals-board-game",
+    "title": "Life Goals Board",
+    "description": "An interactive AI experience.",
+    "url": "/games/life-goals-board-game",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Life%20Goals%20Board%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "life-swap-simulator",
+    "title": "Life Swap Simulator",
+    "description": "An interactive AI experience.",
+    "url": "/games/life-swap-simulator",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Life%20Swap%20Simulator%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "meme-forge",
+    "title": "Meme Forge",
+    "description": "An interactive AI experience.",
+    "url": "/games/meme-forge",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Meme%20Forge%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "micro-mysteries",
+    "title": "Micro Mysteries",
+    "description": "An interactive AI experience.",
+    "url": "/games/micro-mysteries",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Micro%20Mysteries%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "mind-meld",
+    "title": "Mind Meld",
+    "description": "An interactive AI experience.",
+    "url": "/games/mind-meld",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Mind%20Meld%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "mood-dj",
+    "title": "Mood Dj",
+    "description": "An interactive AI experience.",
+    "url": "/games/mood-dj",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Mood%20Dj%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "mood-journey",
+    "title": "Mood Journey",
+    "description": "An interactive AI experience.",
+    "url": "/games/mood-journey",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Mood%20Journey%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "mood-mosaic",
+    "title": "Mood Mosaic",
+    "description": "You are the Game Master AI for Mood Mosaic.",
+    "url": "/games/mood-mosaic",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Mood%20Mosaic%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "myth-builder",
+    "title": "Myth Builder",
+    "description": "An interactive AI experience.",
+    "url": "/games/myth-builder",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Myth%20Builder%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "mythic-beast-builder",
+    "title": "Mythic Beast Builder",
+    "description": "An interactive AI experience.",
+    "url": "/games/mythic-beast-builder",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Mythic%20Beast%20Builder%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "relationship-rpg",
+    "title": "Relationship Rpg",
+    "description": "You are \"The Guide\" \u2014 a warm AI companion who helps couples and close friends embark on shared growth journeys through quests, challenges, and meaning...",
+    "url": "/games/relationship-rpg",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Relationship%20Rpg%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "serendipity-hunt",
+    "title": "Serendipity Hunt",
+    "description": "You are the game master for \"Serendipity Hunt\", a treasure-hunt-style social game.",
+    "url": "/games/serendipity-hunt",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Serendipity%20Hunt%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "shared-playlist-maker",
+    "title": "Shared Playlist Maker",
+    "description": "You are ElinityAI \u2014 the Vibe Conductor and Playlist Alchemist for the game \"Shared Playlist Maker.\"",
+    "url": "/games/shared-playlist-maker",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Shared%20Playlist%20Maker%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "social-labyrinth",
+    "title": "Social Labyrinth",
+    "description": "An interactive AI experience.",
+    "url": "/games/social-labyrinth",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Social%20Labyrinth%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "story-relay",
+    "title": "Story Relay",
+    "description": "You are the Game Master for a collaborative storytelling game called \"Story Relay.\" ",
+    "url": "/games/story-relay",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Story%20Relay%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "symbol-quest",
+    "title": "Symbol Quest",
+    "description": "An interactive AI experience.",
+    "url": "/games/symbol-quest",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Symbol%20Quest%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "the-ai-heist",
+    "title": "The Ai Heist",
+    "description": "An interactive AI experience.",
+    "url": "/games/the-ai-heist",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "The%20Ai%20Heist%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "the-alignment-game",
+    "title": "The Alignment",
+    "description": "You are ElinityAI, the Game Master for \"The Alignment Game,\" where players discover how aligned they are in choices and preferences.",
+    "url": "/games/the-alignment-game",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "The%20Alignment%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "the-hidden-question",
+    "title": "The Hidden Question",
+    "description": "An interactive AI experience.",
+    "url": "/games/the-hidden-question",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "The%20Hidden%20Question%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "the-long-journey",
+    "title": "The Long Journey",
+    "description": "An interactive AI experience.",
+    "url": "/games/the-long-journey",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "The%20Long%20Journey%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "time-travelers",
+    "title": "Time Travelers",
+    "description": "You are ElinityAI, the \"Time Conductor\" hosting the game \"Time Travelers,\" part of the Elinity Games Suite.",
+    "url": "/games/time-travelers",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Time%20Travelers%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "truth-arcade",
+    "title": "Truth Arcade",
+    "description": "You are ElinityAI, the fun and thoughtful host of the game \"Truth Arcade,\" part of the Elinity Games Suite.",
+    "url": "/games/truth-arcade",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Truth%20Arcade%20concept%20art%20cinematic%204k"
+  },
+  {
+    "id": "truth-timeline",
+    "title": "Truth Timeline",
+    "description": "An interactive AI experience.",
+    "url": "/games/truth-timeline",
+    "tags": [
+      "AI",
+      "Storytelling"
+    ],
+    "bg_prompt": "Truth%20Timeline%20concept%20art%20cinematic%204k"
+  }
+]

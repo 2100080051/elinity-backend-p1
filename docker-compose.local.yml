@@ -1,0 +1,29 @@
+services:
+  redis:
+    image: redis:alpine
+    container_name: elinity_redis
+    ports:
+      - "6381:6379"
+
+  backend:
+    build: .
+    container_name: elinity_backend_test
+    ports:
+      - "8081:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_PORT=5432
+      - DB_NAME=elinity_db
+      - DB_USER=postgres
+      - DB_PASSWORD=nani2906
+      - DB_URL=postgresql://postgres:nani2906@host.docker.internal:5432/elinity_db
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - SKIP_HEAVY_IMPORTS=1
+      - OPENROUTER_API_KEY=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
+    depends_on:
+      - redis
+    volumes:
+      - ./:/app

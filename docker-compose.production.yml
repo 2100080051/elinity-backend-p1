@@ -1,0 +1,62 @@
+services:
+  db:
+    image: postgres:15
+    container_name: elinity-db-prod
+    restart: always
+    environment:
+      POSTGRES_USER: elinity_user
+      POSTGRES_PASSWORD: Deckoviz_prod_2026
+      POSTGRES_DB: elinity_db
+    ports:
+      - "5435:5432"
+    volumes:
+      - elinity_db_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: elinity-redis-prod
+    restart: always
+    ports:
+      - "6385:6379"
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: elinity-backend-prod
+    restart: always
+    ports:
+      - "8085:8081"
+      - "8086:7862"
+    environment:
+      - ENV=production
+      - DB_URL=postgresql://elinity_user:Deckoviz_prod_2026@db:5432/elinity_db
+      - REDIS_URL=redis://redis:6379/0
+      - PYTHONPATH=/app
+      - SKIP_HEAVY_IMPORTS=0
+      # Using standard keys from backup
+      - OPENROUTER_API_KEY=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
+      - GOOGLE_API_KEY=AIzaSyCmjxkn42I8ALSzvDef21gU6DrhZ5t3dcc
+      - MILVUS_URI=https://in03-009d7475a469863.serverless.aws-eu-central-1.cloud.zilliz.com
+      - MILVUS_TOKEN=f8fafd3eefe65adc188fe27da8a9ed8c87394e4f9605ad3002e6780af137125ac0e80c70a70f1ad91ec69a4a72da78b17cede9a3
+    command: >
+      sh -c "uvicorn main:app --host 0.0.0.0 --port 8081"
+    depends_on:
+      - db
+      - redis
+
+  worker:
+    build: .
+    container_name: elinity-worker-prod
+    restart: always
+    environment:
+      - DB_URL=postgresql://elinity_user:Deckoviz_prod_2026@db:5432/elinity_db
+      - REDIS_URL=redis://redis:6379/0
+      - PYTHONPATH=/app
+    command: celery -A core.celery.celery_app worker --loglevel=info
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  elinity_db_data:

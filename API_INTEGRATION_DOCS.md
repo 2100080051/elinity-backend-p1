@@ -1,0 +1,97 @@
+# Elinity Full API Reference
+**Version:** v2.5 (Latest Backend Sync)
+**Base URL:** `https://elinity-backend-arg7ckh2fph8duea.centralus-01.azurewebsites.net`
+
+---
+
+## 🔐 1. Authentication & Core
+| Prefix | Module | Description |
+| :--- | :--- | :--- |
+| `/auth` | `auth.py` | Login, Register, Password Reset, Token Refresh |
+| `/users` | `users.py` | User Profile Management |
+| `/billing` | `billing.py` | Subscription, Payments & Credit Management |
+| `/notifications` | `notifications.py` | Real-time & Stored User Notifications |
+| `/plans` | `plans.py` | Available Subscription Plans Info |
+| `/upload-file` | `upload_file.py` | General File Upload (S3/Azure/Local) |
+| `/assets` | `assets.py` | Static Assets & Image Management |
+| `/internal/users`| `internal_users.py` | Admin Internal User Tools |
+
+---
+
+## 🤝 2. Communication & Social
+| Prefix | Module | Description |
+| :--- | :--- | :--- |
+| `/chats` | `chats.py` | Direct Messaging (1-on-1) & Chat History |
+| `/groups` | `groups.py` | Community Group Management |
+| `/members` | `members.py` | Group Membership & Roles |
+| `/feed` | `social_feed.py` | Public Social Feed & AI Feedback |
+| `/p1` | `connections.py` | **Connections & Matches (P1 Discovery Flow)** |
+| `/room` | `group_chat.py` | Multiplayer Room Chat & Sync |
+| `/websocket` | `websocket.py` | Real-time Notification Engine |
+
+---
+
+## 🧠 3. AI & Personal Growth
+| Prefix | Module | Description |
+| :--- | :--- | :--- |
+| `/journal` | `journal.py` | Daily Journal Logging |
+| `/multimodal` | `multimodal.py` | **Smart Journal (Audio/Image Truth Analysis)** |
+| `/recommendations` | `recommendations.py` | AI-Powered User Matchmaking |
+| `/lumi` | `lumi.py` | **Lumi AI Assistant (Direct Chat)** |
+| `/ai-mode` | `ai_modes.py` | AI Personality & Tone Configuration |
+| `/lifebook` | `lifebook.py` | **Digital Lifebook (Journey Progress Summary)** |
+| `/dashboard` | `user_dashboard.py`| **Personal Growth Dashboard (Streaks, Mood)** |
+| `/tools` | `tools.py` | AI Nudges, Rituals & Habit Tracking |
+| `/questions` | `question_cards.py` | Deep Conversation Starters |
+
+---
+
+## 📈 4. Skills & Evaluation
+| Prefix | Module | Description |
+| :--- | :--- | :--- |
+| `/relationship-skills` | `relationship_skills.py` | Interactive Relationship Coaching |
+| `/self-growth` | `self_growth_skills.py` | Personal Development Tracks |
+| `/social` | `social_skills.py` | Social Presence & Skill Training |
+| `/evaluate` | `skill_evaluation.py` | AI Performance Metrics & Reports |
+
+---
+
+## 🎮 5. Game Engine (Multiplayer)
+| Prefix | Description | Key Endpoints |
+| :--- | :--- | :--- |
+| `/games/multiplayer` | **Lobby & Session Manager** | `create`, `join`, `list`, `my-games` |
+| `/room` | **Live Game Sync** | `join`, `ws/{group_id}` (WebSocket) |
+
+---
+
+## 🎲 6. Premium Game Endpoints
+Access Pattern: `POST /games/{slug}/{action}`
+
+### Core Interaction Games
+*   `/games/the-story-weaver`
+*   `/games/world-builders`
+*   `/games/myth-maker-arena`
+*   `/games/truth-and-layer`
+*   `/games/the-alignment-game`
+*   `/games/the-compass-game`
+*   `/games/echoes-and-expressions`
+*   `/games/serendipity-strings`
+*   `/games/the-long-quest`
+*   `/games/memory-mosaic`
+*   `/games/value-compass`
+
+### AI Standard Library
+*   `/games/ai-adventure-dungeon`, `/games/ai-comic-creator`, `/games/ai-emoji-war`, `/games/ai-escape-room`, `/games/ai-fortune-teller`, `/games/ai-improv-theater`, `/games/ai-oracle`, `/games/ai-poetry-garden`, `/games/ai-puzzle-architect`, `/games/ai-puzzle-saga`, `/games/ai-rap-battle`, `/games/ai-roast-toast`, `/games/ai-role-swap`, `/games/ai-sandbox`, `/games/character-swap`, `/games/collaborative-canvas`, `/games/connection-sparks`, `/games/creative-duel-arena`, `/games/cultural-exchange`, `/games/dream-battles`, `/games/dream-builder`, `/games/emotion-charades`, `/games/emotion-labyrinth`, `/games/epic-poem-duel`, `/games/friendship-towers`, `/games/future-artifact-maker`, `/games/future-forecast`, `/games/gratitude-quest`, `/games/great-debate`, `/games/guess-the-fake`, `/games/hidden-truths`, `/games/inner-world-quest`, `/games/journey-journal`, `/games/journey-through-music`, `/games/legacy-builder`, `/games/life-goals-board-game`, `/games/life-swap-simulator`, `/games/meme-forge`, `/games/micro-mysteries`, `/games/mind-meld`, `/games/mood-dj`, `/games/mood-journey`, `/games/mood-mosaic`, `/games/myth-builder`, `/games/mythic-beast-builder`, `/games/relationship-rpg`, `/games/serendipity-hunt`, `/games/shared-playlist-maker`, `/games/social-labyrinth`, `/games/story-relay`, `/games/symbol-quest`, `/games/the-ai-heist`, `/games/the-great-debate`, `/games/the-hidden-question`, `/games/the-long-journey`, `/games/time-travelers`, `/games/truth-arcade`, `/games/truth-timeline`
+
+---
+
+## 🛠️ 7. Admin & System
+*   `/admin-panel` (Stats & Controls)
+*   `/admin/blogs` (Content Curation)
+*   `/admin/auth` (Superuser Login)
+*   `/onboarding` (Universal Profile Setup)
+*   `/voice` (Audio Profile Save)
+
+---
+*Generated by Elinity AI Agent - Updated Jan 2026*
+

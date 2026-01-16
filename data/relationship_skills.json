@@ -1,0 +1,662 @@
+[
+  {
+    "id": 1,
+    "category": "Relationship Growth Skills",
+    "name": "Deep Listening",
+    "description": "Learn to listen fully, without preparing your reply. AI trains you to slow your mental pace, notice your partner’s emotional layer, and listen without interruption.",
+    "notes": "Solo session; optional partner practice later.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "The Art of Silence",
+        "goal": "Practice listening without interrupting.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Reflective Mirroring",
+        "goal": "Learn to repeat back what you heard to ensure understanding.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 2,
+    "category": "Relationship Growth Skills",
+    "name": "Empathic Perspective-Taking",
+    "description": "Strengthen the ability to see through your partner’s eyes. AI gives scenarios and emotional angles.",
+    "notes": "Solo; partner version optional.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Seeing the Other Side",
+        "goal": "Reconstruct what the other person feelings in a scenario.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Emotional Archeology",
+        "goal": "Dig deeper into the 'why' behind their perspective.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 3,
+    "category": "Relationship Growth Skills",
+    "name": "Emotion Naming & Regulation",
+    "description": "Build clarity and calm in emotional conversations. AI helps you identify micro-emotions.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Labeling the Feeling",
+        "goal": "Identify and name specific emotions.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Regulation Techniques",
+        "goal": "Practice breathing and grounding when emotions spike.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 4,
+    "category": "Relationship Growth Skills",
+    "name": "Vulnerability Practice",
+    "description": "Learn the art of letting yourself be known. AI guides you through structured vulnerability prompts.",
+    "notes": "Best done solo first.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Safe Disclosure",
+        "goal": "Share a small vulnerability.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Deepening Trust",
+        "goal": "Express a deeper fear or need.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 5,
+    "category": "Relationship Growth Skills",
+    "name": "Relational Resilience",
+    "description": "Strengthen how you handle tension, rupture, repair.",
+    "notes": "Solo recommended.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Identifying Ruptures",
+        "goal": "Recognize when connection breaks.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "The Art of Repair",
+        "goal": "Learn standardized repair attempts.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 6,
+    "category": "Relationship Growth Skills",
+    "name": "Healthy Boundary Setting",
+    "description": "Develop clear, respectful relational boundaries.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Defining Limits",
+        "goal": "Identify your non-negotiables.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Communicating No",
+        "goal": "Say no without guilt.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 7,
+    "category": "Relationship Growth Skills",
+    "name": "Attachment Awareness",
+    "description": "Understand your attachment tendencies.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Identifying Your Style",
+        "goal": "Recognize anxious/avoidant patterns.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Moving to Secure",
+        "goal": "Practice secure behaviors.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 8,
+    "category": "Relationship Growth Skills",
+    "name": "Love Language Fluency",
+    "description": "Learn to give and receive love in the right channel.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Discovering Languages",
+        "goal": "Identify primary love languages.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Speaking Their Language",
+        "goal": "Practice expressing love in a non-native language.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 9,
+    "category": "Relationship Growth Skills",
+    "name": "Intimacy & Emotional Closeness",
+    "description": "Build depth and emotional safety.",
+    "notes": "Solo or partners.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Eye Gazing & Presence",
+        "goal": "Build comfort with silent connection.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Sharing Dreams",
+        "goal": "Discuss future hopes vulnerably.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 10,
+    "category": "Relationship Growth Skills",
+    "name": "Conflict De-escalation",
+    "description": "Learn to keep conflict from overheating.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Pausing the Fight",
+        "goal": "Learn to call a timeout.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Soft Startups",
+        "goal": "Raise issues without accusation.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 11,
+    "category": "Relationship Growth Skills",
+    "name": "Repair Rituals",
+    "description": "Master the art of coming back to each other.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Owning Your Part",
+        "goal": "Take responsibility for your specific actions.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Accepting Apology",
+        "goal": "Receive repair without punishment.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 12,
+    "category": "Relationship Growth Skills",
+    "name": "Appreciation & Positive Reinforcement",
+    "description": "Strengthen connection through intentional positivity.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "The Appreciation Hunt",
+        "goal": "Find 5 things to appreciate daily.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Expressing Gratitude",
+        "goal": "Verbalize thanks effectively.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 13,
+    "category": "Relationship Growth Skills",
+    "name": "Curiosity & Open Inquiry",
+    "description": "Replace assumptions with curiosity.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Asking Open Questions",
+        "goal": "Avoid yes/no questions.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Deepening Inquiry",
+        "goal": "Ask 'what else?' to go deeper.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 14,
+    "category": "Relationship Growth Skills",
+    "name": "Communication Hygiene",
+    "description": "Speak cleanly instead of reactively.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "I-Statements",
+        "goal": "Speak from your own experience.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Removing Absolutes",
+        "goal": "Stop using 'always' and 'never'.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 15,
+    "category": "Relationship Growth Skills",
+    "name": "Locus of Control in Relationships",
+    "description": "Strengthen personal agency.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "What's Mine vs Theirs",
+        "goal": "Identify ownership of feelings.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Taking Charge of Self",
+        "goal": "Focus on your own reactions.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 16,
+    "category": "Relationship Growth Skills",
+    "name": "Relational Stoicism",
+    "description": "Build inner steadiness under relational pressure.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Staying Calm",
+        "goal": "Maintain composure during stress.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Accepting Reality",
+        "goal": "Accept what you cannot change.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 17,
+    "category": "Relationship Growth Skills",
+    "name": "Emotional Transparency",
+    "description": "Communicate your inner state elegantly.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Naming the State",
+        "goal": "State your emotion without drama.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Asking for Needs",
+        "goal": "Link emotion to a specific request.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 18,
+    "category": "Relationship Growth Skills",
+    "name": "Trust Building & Repair",
+    "description": "Learn how trust is built, broken, and rebuilt.",
+    "notes": "Solo or partners.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "The Trust Jar",
+        "goal": "Understand how small acts build trust.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Rebuilding After Breach",
+        "goal": "Steps to restore violated trust.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 19,
+    "category": "Relationship Growth Skills",
+    "name": "Attunement Practice",
+    "description": "Tune into subtle emotional shifts.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Noticing Cues",
+        "goal": "Observe non-verbal signals.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Checking In",
+        "goal": "Verify your observations with partner.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 20,
+    "category": "Relationship Growth Skills",
+    "name": "Collaborative Problem Solving",
+    "description": "Solve problems without power struggles.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Defining the Problem",
+        "goal": "Agree on what the issue actually is.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Brainstorming Solutions",
+        "goal": "Generate options together.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 21,
+    "category": "Relationship Growth Skills",
+    "name": "Healthy Self-Expression",
+    "description": "Express your needs clearly and calmly.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Identifying Needs",
+        "goal": "Know what you actually want.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Expressing Without Blame",
+        "goal": "Using 'I need' instead of 'You don't'.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 22,
+    "category": "Relationship Growth Skills",
+    "name": "Compassion Over Reactivity",
+    "description": "Strengthen compassion during friction.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "The Pause",
+        "goal": "Stop before reacting.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Assuming Positive Intent",
+        "goal": "Look for the benevolent explanation.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 23,
+    "category": "Relationship Growth Skills",
+    "name": "Shared Meaning Creation",
+    "description": "Build rituals and shared identity.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Defining 'Us'",
+        "goal": "Create a shared identity statement.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Rituals of Connection",
+        "goal": "Establish daily/weekly habits.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 24,
+    "category": "Relationship Growth Skills",
+    "name": "Mapping Your Trigger Points",
+    "description": "Understand why you react the way you do.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Identify Triggers",
+        "goal": "List situations that set you off.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Tracing Roots",
+        "goal": "Understand historical source of triggers.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 25,
+    "category": "Relationship Growth Skills",
+    "name": "Self-Soothing Techniques",
+    "description": "Stay grounded when emotions spike.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Physiological Calm",
+        "goal": "Relax your body first.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Cognitive Reframing",
+        "goal": "Change the thought causing stress.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 26,
+    "category": "Relationship Growth Skills",
+    "name": "Secure Communication Loop",
+    "description": "Speak -> listen -> reflect -> resolve.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "The Speaker Role",
+        "goal": "Share one point at a time.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "The Listener Role",
+        "goal": "Listen only to understand.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 27,
+    "category": "Relationship Growth Skills",
+    "name": "Emotional Generosity",
+    "description": "Give warmth even when stressed.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Small Acts",
+        "goal": "Offer a kindness without being asked.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Generous Assumptions",
+        "goal": "Give benefit of the doubt.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 28,
+    "category": "Relationship Growth Skills",
+    "name": "Narrative Reframing",
+    "description": "Rewrite unhelpful stories about your partner.",
+    "notes": "Solo.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Catching the Story",
+        "goal": "Notice the story you are telling yourself.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "The Alternative View",
+        "goal": "Create a more charitable interpretation.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 29,
+    "category": "Relationship Growth Skills",
+    "name": "Shared Future Visioning",
+    "description": "Create aligned plans and dreams.",
+    "notes": "Solo or partners.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "Dreaming Big",
+        "goal": "Brainstorm unconstrained future ideas.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Aligning Goals",
+        "goal": "Find intersection of individual dreams.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  },
+  {
+    "id": 30,
+    "category": "Relationship Growth Skills",
+    "name": "Relationship Check-in Ritual",
+    "description": "Build consistent emotional maintenance.",
+    "notes": "Solo or partners.",
+    "sessions": [
+      {
+        "session_number": 1,
+        "title": "The State of the Union",
+        "goal": "Review what went well this week.",
+        "duration": "10 min"
+      },
+      {
+        "session_number": 2,
+        "title": "Planning Ahead",
+        "goal": "Coordinate for the coming week.",
+        "duration": "15 min"
+      }
+    ],
+    "meta_prompt": ""
+  }
+]
