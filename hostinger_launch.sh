@@ -9,6 +9,7 @@ else
 fi
 
 # 2. Create the Docker Compose file automatically
+# UPDATED PORTS: Public 8082 -> Container 8085
 cat <<EOF > docker-compose.yml
 version: '3.8'
 services:
@@ -37,11 +38,12 @@ services:
     container_name: elinity-p1-app
     restart: always
     ports:
-      - "8085:8081"
+      - "8082:8085"
     env_file: .env
     environment:
       - DB_URL=postgresql://elinity_user:Deckoviz_prod_2026@elinity-p1-db:5432/elinity_db
       - REDIS_URL=redis://elinity-p1-redis:6379/0
+    command: uvicorn main:app --host 0.0.0.0 --port 8085
     depends_on:
       - elinity-p1-db
       - elinity-p1-redis
@@ -54,5 +56,5 @@ EOF
 sudo docker-compose up -d --build
 
 echo "------------------------------------------------"
-echo "Elinity P1 Backend is now launching on port 8085"
+echo "Elinity P1 Backend is now launching on port 8082"
 echo "------------------------------------------------"
