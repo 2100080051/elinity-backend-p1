@@ -16,7 +16,7 @@ fi
 cat <<EOF > docker-compose.yml
 version: '3.8'
 services:
-  elinity-db:
+  db:
     image: postgres:15
     container_name: elinity-db-gcp
     restart: always
@@ -29,7 +29,7 @@ services:
     volumes:
       - elinity_gcp_data:/var/lib/postgresql/data
 
-  elinity-redis:
+  redis:
     image: redis:7-alpine
     container_name: elinity-redis-gcp
     restart: always
@@ -44,12 +44,12 @@ services:
       - "80:8081" # GCP will show the app on port 80 (Standard Web Port)
     env_file: .env
     environment:
-      - DB_URL=postgresql://elinity_user:Deckoviz_prod_2026@elinity-db:5432/elinity_db
-      - REDIS_URL=redis://elinity-redis:6379/0
+      - DB_URL=postgresql://elinity_user:Deckoviz_prod_2026@db:5432/elinity_db
+      - REDIS_URL=redis://redis:6379/0
     command: uvicorn main:app --host 0.0.0.0 --port 8081
     depends_on:
-      - elinity-db
-      - elinity-redis
+      - db
+      - redis
 
 volumes:
   elinity_gcp_data:
