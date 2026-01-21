@@ -1,0 +1,14 @@
+# Ignore huge folders to speed up GCP upload
+.git/
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+.next/
+P1_BACKUP/
+P2_BACKUP/
+MOBILE_APP_BACKUP/
+elinity game suite/
+*.zip
+*.sql
+*.log

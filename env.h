@@ -1,20 +1,20 @@
-# DATABASE SETTINGS (Optimized for Hostinger Docker)
-DB_HOST=elinity-p1-db
+# DATABASE SETTINGS (GCP Internal Docker)
+DB_HOST=elinity-db
 DB_PORT=5432
 DB_NAME=elinity_db
 DB_USER=elinity_user
 DB_PASSWORD=Deckoviz_prod_2026
 DB_SSL_MODE=disable
 
-DB_URL=postgresql://elinity_user:Deckoviz_prod_2026@elinity-p1-db:5432/elinity_db
+DB_URL=postgresql://elinity_user:Deckoviz_prod_2026@elinity-db:5432/elinity_db
 
-# REDIS SETTINGS (Local Docker)
-REDIS_HOST=elinity-p1-redis
+# REDIS SETTINGS (GCP Internal Docker)
+REDIS_HOST=elinity-redis
 REDIS_PORT=6379
-REDIS_URL=redis://elinity-p1-redis:6379/0
+REDIS_URL=redis://elinity-redis:6379/0
 
-# MILVUS SETTINGS (Local Docker)
-MILVUS_URI=http://elinity-p1-milvus:19530
+# MILVUS SETTINGS (GCP Internal Docker)
+MILVUS_URI=http://elinity-milvus:19530
 
 # MONGODB (External/Atlas - as per your backup)
 MONGO_DB_URL=mongodb+srv://2100080051aids_db_user:2dckMkQtZ7ZuxCkp@cluster0.telxnft.mongodb.net/personas?retryWrites=true&w=majority
