@@ -55,7 +55,7 @@ services:
       - "80:8081"
     env_file: .env
     environment:
-      - DATABASE_URL=postgresql://elinity_user:Deckoviz_prod_2026@db:5432/elinity_db
+      - DB_URL=postgresql://elinity_user:Deckoviz_prod_2026@db:5432/elinity_db
       - REDIS_URL=redis://redis:6379/0
       - REDIS_HOST=redis
     command: uvicorn main:app --host 0.0.0.0 --port 8081

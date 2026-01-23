@@ -1,15 +1,15 @@
-# SUPABASE CONNECTION (External Managed DB)
-# Replace [YOUR-PASSWORD] with Nikshith2906#
-DB_URL=postgresql://postgres:[YOUR-PASSWORD]@db.franwuowlrcddwmhbhjo.supabase.co:5432/postgres
-DB_SSL_MODE=require
+# LOCAL DOCKER DB (Enabled)
+DB_HOST=db
+DB_PORT=5432
+DB_NAME=elinity_db
+DB_USER=elinity_user
+DB_PASSWORD=Deckoviz_prod_2026
+DB_URL=postgresql://elinity_user:Deckoviz_prod_2026@db:5432/elinity_db
+DB_SSL_MODE=disable
 
-# LEGACY DOCKER DB (Disabled)
-# DB_HOST=db
-# DB_PORT=5432
-# DB_NAME=elinity_db
-# DB_USER=elinity_user
-# DB_PASSWORD=Deckoviz_prod_2026
-# DB_URL=postgresql://elinity_user:Deckoviz_prod_2026@db:5432/elinity_db
+# SUPABASE CONNECTION (Disabled)
+# DB_URL=postgresql://postgres:[YOUR-PASSWORD]@db.franwuowlrcddwmhbhjo.supabase.co:5432/postgres
+# DB_SSL_MODE=require
 
 # REDIS SETTINGS (GCP Internal Docker)
 REDIS_HOST=redis
