@@ -7,3 +7,17 @@ Dockerfile
 Procfile
 nginx
 gunicorn.service
+game-ui/
+docs/
+data/
+*.zip
+*.sql
+*.md
+.git/
+.github/
+.vscode/
+tests/
+scripts/
+
+# Explicitly include requirements.txt
+!requirements.txt

@@ -1,6 +1,6 @@
 # SUPABASE CONNECTION (External Managed DB)
-# Replace [YOUR-PASSWORD] with the actual password before deployment
-DB_URL=postgresql://postgres:[YOUR-PASSWORD]@db.wvrborjgkgjftebkgggg.supabase.co:5432/postgres
+# Replace [YOUR-PASSWORD] with Nikshith2906#
+DB_URL=postgresql://postgres:[YOUR-PASSWORD]@db.franwuowlrcddwmhbhjo.supabase.co:5432/postgres
 DB_SSL_MODE=require
 
 # LEGACY DOCKER DB (Disabled)

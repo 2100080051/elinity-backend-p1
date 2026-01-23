@@ -5,8 +5,10 @@ import os
 from ._system_prompt import load_system_prompt
 from ._llm import safe_chat_completion
 from .game_session_manager import GameManager
-from database.session import get_db
+from database.session import get_db, get_async_db
 from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
+import json
 
 router = APIRouter()
 

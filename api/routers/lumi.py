@@ -3,7 +3,8 @@ from elinity_ai.modes.prompts import SYSTEM_PROMPT_LUMI
 from database.session import get_db, Session
 from utils.token import get_current_user
 from models.user import Tenant
-from fastapi import Depends
+from fastapi import Depends, APIRouter
+from services.ai_service import AIService
 
 router = APIRouter(tags=["Lumi Core"])
 
