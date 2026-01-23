@@ -31,6 +31,8 @@ DEBUG=False
 PYTHONPATH=/app
 APP_NAME=elinity-backend-p1
 SECRET_KEY=supersecretkey123
+CORS_ALLOW_ORIGINS=https://elinity-premium-games.vercel.app,http://localhost:3000,http://localhost:5173
+
 
 # API KEYS
 OPENROUTER_API_KEY=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
