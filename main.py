@@ -355,7 +355,13 @@ app = FastAPI(lifespan=lifespan, title=os.getenv("APP_NAME", "elinity-backend"))
 cors_env = os.getenv("CORS_ALLOW_ORIGINS")
 allow_origins = cors_env.split(",") if cors_env else ["*"]
 # Force add the main frontend domain just in case
-allow_origins.append("https://elinity-the-story-weaver-docker.azurewebsites.net")
+allow_origins.extend([
+    "https://elinity-the-story-weaver-docker.azurewebsites.net",
+    "http://localhost:5173",
+    "http://localhost:4173",
+    "http://localhost:3000",
+    "http://localhost"
+])
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allow_origins,
