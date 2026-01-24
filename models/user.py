@@ -251,6 +251,16 @@ class KeyMemories(Base):
     __tablename__ = "key_memories"
     id = Column(String, primary_key=True, default=gen_uuid)
     tenant = Column(String, ForeignKey("tenants.id"), nullable=False)
+
     special_dates = Column(JSON, default=[]) # List of {date, title, description}
     core_memories = Column(JSON, default=[]) # List of strings or objects
+
+
+
+# ALIAS for cleaner imports in other modules (like tests)
+# ALIAS for cleaner imports in other modules (like tests)
+User = Tenant
+
+
+
 

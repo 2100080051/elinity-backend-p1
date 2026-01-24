@@ -10,7 +10,7 @@ interface PremiumGameLayoutProps {
     subtitle?: string;
     icon?: React.ElementType;
     children: React.ReactNode;
-    backgroundVar?: 'starfield' | 'nebula' | 'void';
+    backgroundVar?: 'starfield' | 'nebula' | 'void' | 'abyss' | 'aurora' | 'fractal';
     guideText?: string;
 }
 

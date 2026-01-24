@@ -27,6 +27,7 @@ class APIEndpointCategory(PyEnum):
 
 class Plan(Base):
     __tablename__ = "plans"
+    __table_args__ = {'extend_existing': True}
     
     id = Column(Integer, primary_key=True)
     name = Column(String(100), unique=True, nullable=False)
@@ -44,9 +45,10 @@ class Plan(Base):
 
 class Subscription(Base):
     __tablename__ = "subscriptions"
+    __table_args__ = {'extend_existing': True}
     
     id = Column(Integer, primary_key=True)
-    tenant = Column(Integer, nullable=False)  # Reference to your user model
+    tenant = Column(String, nullable=False)  # Reference to your user model
     plan = Column(Integer, ForeignKey("plans.id"), nullable=False)
     credits_remaining = Column(Integer, default=0)
     credits_used_this_period = Column(Integer, default=0)
@@ -60,6 +62,7 @@ class Subscription(Base):
 
 class CreditPurchase(Base):
     __tablename__ = "credit_purchases"
+    __table_args__ = {'extend_existing': True}
     
     id = Column(Integer, primary_key=True)
     subscription_id = Column(Integer, ForeignKey("subscriptions.id"), nullable=False)
@@ -72,6 +75,7 @@ class CreditPurchase(Base):
     
 class APIUsageLog(Base):
     __tablename__ = "api_usage_logs"
+    __table_args__ = {'extend_existing': True}
     
     id = Column(Integer, primary_key=True)
     subscription = Column(Integer, ForeignKey("subscriptions.id"), nullable=False)
@@ -84,9 +88,10 @@ class APIUsageLog(Base):
     
 class RateLimitLog(Base):
     __tablename__ = "rate_limit_logs"
+    __table_args__ = {'extend_existing': True}
     
     id = Column(Integer, primary_key=True)
-    tenant = Column(Integer, nullable=False)
+    tenant = Column(String, nullable=False)
     endpoint_path = Column(String(255), nullable=False)
     requests_count = Column(Integer, default=1)
     window_start = Column(DateTime, default=datetime.now(timezone.utc))
@@ -94,6 +99,7 @@ class RateLimitLog(Base):
     
 class Transaction(Base):
     __tablename__ = "transactions"
+    __table_args__ = {'extend_existing': True}
     
     id = Column(Integer, primary_key=True)
     subscription = Column(Integer, ForeignKey("subscriptions.id"), nullable=False)

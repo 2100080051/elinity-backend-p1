@@ -1,7 +1,8 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from typing import Optional, List, Dict
 import json
+import re
 from ._system_prompt import load_system_prompt
 from ._llm import safe_chat_completion
 from .game_session_manager import GameManager
@@ -17,19 +18,14 @@ class StartReq(BaseModel):
     user_id: str
     ai_enabled: Optional[bool] = True
 
-class JoinReq(BaseModel):
-    session_id: str
-    user_id: str
-
 class ActionReq(BaseModel):
     session_id: str
     user_id: str
-    action: str # "submit_answer", "find_strings"
+    action: str # "answer", "weave"
     content: str 
 
 @router.post('/start')
 async def start(req: StartReq, db: AsyncSession = Depends(get_async_db)):
-    # Ensure guest user exists before any DB operations
     from utils.guest_manager import ensure_guest_user
     await ensure_guest_user(db, req.user_id)
     
@@ -38,21 +34,25 @@ async def start(req: StartReq, db: AsyncSession = Depends(get_async_db)):
     
     initial_ai = {}
     if req.ai_enabled:
-        resp = await safe_chat_completion(system_prompt, "Generate opening question.", max_tokens=300)
+        resp = await safe_chat_completion(system_prompt, "Initialize the Temporal Web. Present the first thread.", max_tokens=600)
         try: initial_ai = json.loads(resp)
-        except: initial_ai = {"prompt": "What is a coincidence that changed your life?", "visual_web": "Loose Threads"}
+        except: initial_ai = {"prompt": "What is a coincidence that changed your life?", "serendipity_insight": "The web is thin. We must weave."}
 
     initial_state = {
-        "current_prompt": initial_ai.get("prompt"),
+        "prompt": initial_ai.get("prompt"),
+        "insight": initial_ai.get("serendipity_insight"),
+        "depth": 10,
+        "resonance": 50,
+        "thread": initial_ai.get("web_data", {}).get("active_thread", "The Awakening"),
         "responses": {},
         "connections": [],
         "turn": 1,
-        "ai_enabled": req.ai_enabled,
+        "status": "active",
         "last_ai_response": initial_ai
     }
     
     session = await gm.create_session(game_slug=GAME_SLUG, host_id=req.user_id, initial_state=initial_state)
-    await gm.join_session(session.session_id, req.user_id, {"role": "Host"})
+    await gm.join_session(session.session_id, req.user_id, {"role": "Weaver"})
     group_id = await create_game_chat_group(db, session.session_id, req.user_id)
     return {'ok': True, 'session_id': session.session_id, 'group_id': group_id, 'state': session.state}
 
@@ -60,49 +60,91 @@ async def start(req: StartReq, db: AsyncSession = Depends(get_async_db)):
 async def action(req: ActionReq, db: AsyncSession = Depends(get_async_db)):
     gm = GameManager(db)
     session = await gm.get_session(req.session_id)
-    current_state = session.state
+    if not session: raise HTTPException(status_code=404, detail="Session not found")
     
-    responses = current_state.get("responses", {})
-    connections = current_state.get("connections", [])
+    s = session.state
+    responses = dict(s.get("responses", {}))
     
-    if req.action == "submit_answer":
+    if req.action == "answer":
         responses[req.user_id] = req.content
-        
-    ai_response = {}
-    if req.action == "find_strings" and current_state.get("ai_enabled"):
-        system_prompt = load_system_prompt(GAME_SLUG)
-        # Dynamic Feedback Integration
-        observer_note = ""
-        player_data = session.players.get(req.user_id, {})
-        if player_data.get("truth_mismatch"):
-             observer_note = f"\n[SHADOW OBSERVER NOTE]: {player_data.get('last_commentary')} When finding 'connections', mention if this player is trying to connect with something that doesn't actually fit their psychological profile."
+        new_state = {**s, "responses": responses}
+        updated = await gm.update_state(req.session_id, new_state, history_entry={"user": req.user_id, "answer": req.content})
+        return {'ok': True, 'state': updated.state}
 
-        context = f"Prompt: {current_state.get('current_prompt')}\nResponses: {json.dumps(responses)}{observer_note}"
-        resp_str = await safe_chat_completion(system_prompt, context, max_tokens=500)
-        try:
-             ai_response = json.loads(resp_str)
-        except:
-             ai_response = {"connections": [], "prompt": "Next Question?", "serendipity_insight": "No connections found."}
-             
-        # Add new connections
-        if ai_response.get("connections"):
-            connections.extend(ai_response["connections"])
-            
+    # Weave Logic (AI Analysis)
+    system_prompt = load_system_prompt(GAME_SLUG)
+    observer_note = ""
+    if session.analysis and req.user_id in session.analysis:
+        p_analysis = session.analysis[req.user_id]
+        if p_analysis.get("truth_mismatch_detected"):
+            observer_note = f"\n[SHADOW OBSERVER: {p_analysis.get('fun_commentary')}]"
+
+    context = f"""
+    THE WEB:
+    - Current Thread: {s.get('thread')}
+    - Depth: {s.get('depth')}% | Resonance: {s.get('resonance')}%
+    
+    GROUP RESPONSES: {json.dumps(responses)} {observer_note}
+    
+    Analyze the fabric of these lives. Identify the shared strings. Prepare the next pull.
+    Include [METADATA: depth+X, resonance+X, thread=Name] in 'serendipity_insight'.
+    Return VALID JSON.
+    """
+    
+    resp_str = await safe_chat_completion(system_prompt, context, max_tokens=800)
+    try:
+        data = json.loads(resp_str)
+    except:
+        data = {"prompt": "What else remains hidden?", "serendipity_insight": "The web trembles with untold stories."}
+
+    # Metadata Parsing
+    insight = data.get("serendipity_insight", "")
+    new_depth = s.get("depth", 10)
+    new_resonance = s.get("resonance", 50)
+    new_thread = s.get("thread", "The Awakening")
+    
+    meta_match = re.search(r'\[METADATA:\s*(.*?)\]', insight)
+    if meta_match:
+        insight = insight.replace(meta_match.group(0), "").strip()
+        updates = meta_match.group(1).split(",")
+        for up in updates:
+            up = up.strip()
+            if up.startswith("depth"):
+                try: new_depth = min(100, max(0, new_depth + int(re.search(r'[-+]?\d+', up).group())))
+                except: pass
+            elif up.startswith("resonance"):
+                try: new_resonance = min(100, max(0, new_resonance + int(re.search(r'[-+]?\d+', up).group())))
+                except: pass
+            elif up.startswith("thread="):
+                new_thread = up[7:]
+
+    current_connections = list(s.get("connections", []))
+    if data.get("connections"):
+        current_connections.extend(data["connections"])
+
     new_state = {
-        "current_prompt": ai_response.get("prompt", current_state.get("current_prompt")),
-        "responses": responses, # Resetting? Maybe keep history.
-        "connections": connections,
-        "last_ai_response": ai_response,
-        "turn": current_state.get("turn", 0) + 1
+        **s,
+        "prompt": data.get("prompt"),
+        "insight": insight,
+        "depth": new_depth,
+        "resonance": new_resonance,
+        "thread": new_thread,
+        "connections": current_connections[-20:],
+        "responses": {}, # Clear for next round
+        "turn": s.get("turn", 0) + 1
     }
     
-    updated = await gm.update_state(req.session_id, new_state, history_entry={"user": req.user_id, "action": req.action, "answer": req.content})
+    if new_depth >= 100:
+        new_state["status"] = "woven"
+        new_state["insight"] += "\n\nTHE WEB IS COMPLETE. YOU ARE BOUND BY STRINGS OF LIGHT."
+
+    updated = await gm.update_state(req.session_id, new_state, history_entry={"user": req.user_id, "action": "weave"})
     return {'ok': True, 'state': updated.state}
 
 @router.post('/join')
-async def join(req: JoinReq, db: AsyncSession = Depends(get_async_db)):
+async def join(req: ActionReq, db: AsyncSession = Depends(get_async_db)):
     gm = GameManager(db)
-    session = await gm.join_session(req.session_id, req.user_id, {"role": "Player"})
+    session = await gm.join_session(req.session_id, req.user_id, {"role": "Seeker"})
     from models.chat import Group
     group_name = f"game_{req.session_id}"
     result = await db.execute(select(Group).where(Group.name == group_name))

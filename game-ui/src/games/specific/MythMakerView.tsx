@@ -2,7 +2,13 @@ import { useState } from 'react';
 import { useGame } from '../../context/GameContext';
 import { sendAction } from '../../api/client';
 import { PremiumButton, PremiumText } from '../../components/shared/PremiumComponents';
-import { Sword, Scroll, Send, Flame, Sparkles, BookOpen, Crown, Zap, Ghost } from 'lucide-react';
+import {
+    Zap, Sparkles, Orbit,
+    Compass, Eye, Ghost,
+    Feather, ScrollText, Crosshair,
+    LayoutGrid, ChevronRight, Star,
+    Flame, Hexagon, CircleDashed
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PremiumGameLayout } from '../PremiumGameLayout';
 
@@ -11,143 +17,204 @@ export const MythMakerView = () => {
     const [input, setInput] = useState("");
     const [loading, setLoading] = useState(false);
 
-    if (!gameState) return <div className="text-white text-center mt-20 font-black tracking-[0.5em] animate-pulse">AWAKENING DIVINITY...</div>;
+    if (!gameState) return null;
 
-    const mythNarrative = gameState.last_ai_response?.narrative || "The silence of the void awaits your first declaration.";
-    const mythPanel = gameState.last_ai_response?.myth_panel || {};
-    const stage = gameState.stage || 'Origins';
-    const turn = gameState.turn || 1;
-
-    // New Stats
+    const narrative = gameState.narrative || "The stars are cold and waiting for your spark.";
     const belief = gameState.belief ?? 10;
     const divinity = gameState.divinity ?? 0;
+    const status = gameState.constellation_status || "The Spark";
+    const mythicCard = gameState.mythic_card || {};
+    const options = gameState.divine_options || [];
+    const starsigns = gameState.starsigns || [];
 
-    const panelTitle = mythPanel.title || "The Unwritten Word";
-    const panelPoem = mythPanel.poem || "No verse has yet been sung of you.";
+    // Favors
+    const favorA = gameState.favor_architect ?? 0;
+    const favorC = gameState.favor_catalyst ?? 0;
+    const favorW = gameState.favor_witness ?? 0;
 
-    const handleAction = async () => {
-        if (!input.trim() || !sessionId) return;
+    const handleAction = async (actionText: string) => {
+        if (!actionText.trim() || !sessionId || !gameSlug) return;
         setLoading(true);
         try {
-            const resp = await sendAction(gameSlug || 'myth-maker', sessionId, userId, 'action', input);
-            if (resp.ok) {
-                updateGameState(resp.state);
-                setInput("");
-            }
-        } catch (e) { console.error(e); }
+            const resp = await sendAction(gameSlug, sessionId, userId, 'action', actionText);
+            if (resp.ok) updateGameState(resp.state);
+        } catch (e) { console.error("Celestial Error:", e); }
         setLoading(false);
+        setInput("");
     };
 
     return (
         <PremiumGameLayout
             title="Myth Maker Arena"
-            subtitle={`Epoch: ${stage}`}
-            icon={Crown}
-            backgroundVar="starfield"
-            guideText="1. Shape your legend through divine deeds.\n2. Belief flows from the world; Divinity flows from within.\n3. The Chronicler weaves your saga into the stars.\n4. Confront the trials of your own nature."
+            subtitle={`Consellation: ${status}`}
+            icon={Orbit}
+            backgroundVar="aurora"
+            guideText="Weave your legend into the stars. Divinity grants power; Belief grants presence. Follow the star-signs to godhood."
         >
-            <div className="flex flex-col h-full gap-8 relative p-4 md:p-8 overflow-hidden">
+            <div className="flex flex-col h-full relative p-6 md:p-10 overflow-hidden">
 
-                {/* Divine Status Header */}
-                <div className="grid grid-cols-2 gap-8 bg-black/40 backdrop-blur-2xl p-6 rounded-[2rem] border border-white/10 shadow-3xl relative z-10">
-                    <div className="space-y-3">
-                        <div className="flex justify-between text-[9px] font-black uppercase tracking-[0.3em] text-amber-500">
-                            <div className="flex items-center gap-2"><Flame size={12} /> World Belief</div>
-                            <span>{belief}%</span>
-                        </div>
-                        <div className="h-2 bg-white/5 rounded-full overflow-hidden">
-                            <motion.div animate={{ width: `${belief}%` }} className="h-full bg-amber-500 shadow-[0_0_15px_#f59e0b]" />
+                {/* --- COSMIC SIDEBARS (STATUS) --- */}
+                <div className="absolute top-0 inset-x-0 p-8 flex justify-between items-start pointer-events-none z-50">
+
+                    {/* Pantheon Favors */}
+                    <div className="flex flex-col gap-3 pointer-events-auto">
+                        <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 mb-2">Pantheon Resonance</h4>
+                        <div className="flex flex-col gap-2">
+                            {[
+                                { label: 'Architect', val: favorA, color: 'text-cyan-400', bg: 'bg-cyan-500' },
+                                { label: 'Catalyst', val: favorC, color: 'text-orange-500', bg: 'bg-orange-600' },
+                                { label: 'Witness', val: favorW, color: 'text-purple-400', bg: 'bg-purple-500' }
+                            ].map((f, i) => (
+                                <div key={i} className="flex flex-col gap-1 w-32 px-3 py-1.5 bg-black/40 border border-white/5 rounded-xl backdrop-blur-md">
+                                    <div className="flex justify-between items-center">
+                                        <span className={`text-[8px] font-black uppercase tracking-widest ${f.color}`}>{f.label}</span>
+                                        <span className="text-[8px] text-white/60">{f.val}</span>
+                                    </div>
+                                    <div className="h-0.5 bg-white/10 rounded-full overflow-hidden">
+                                        <motion.div animate={{ width: `${Math.min(100, Math.abs(f.val))}%` }} className={`h-full ${f.bg}`} />
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
-                    <div className="space-y-3">
-                        <div className="flex justify-between text-[9px] font-black uppercase tracking-[0.3em] text-white">
-                            <div className="flex items-center gap-2"><Zap size={12} /> Personal Divinity</div>
-                            <span>{divinity}%</span>
-                        </div>
-                        <div className="h-2 bg-white/5 rounded-full overflow-hidden">
-                            <motion.div animate={{ width: `${divinity}%` }} className="h-full bg-gradient-to-r from-amber-200 to-white shadow-[0_0_15px_white]" />
-                        </div>
-                    </div>
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/10 px-4 py-1 rounded-full border border-white/5 text-[8px] font-black tracking-widest text-white/40">
-                        TURN {turn}
-                    </div>
-                </div>
 
-                <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-8 min-h-0">
-                    {/* The Chronicler's Voice - Main Scene */}
-                    <div className="lg:col-span-2 flex flex-col h-full">
-                        <div className="flex-1 bg-gradient-to-b from-black/60 to-black/20 rounded-[3rem] border border-white/5 relative overflow-hidden flex flex-col justify-center px-12 text-center group">
-                            <div className="absolute top-0 right-0 p-20 text-white/[0.02] -rotate-12 pointer-events-none group-hover:text-amber-500/[0.05] transition-colors duration-1000">
-                                <Sword size={400} />
-                            </div>
-
-                            <AnimatePresence mode="wait">
+                    {/* Star Signs */}
+                    <div className="flex flex-col items-end gap-2 pointer-events-auto">
+                        <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 mb-2">Attained Star-Signs</h4>
+                        <div className="flex flex-wrap flex-col items-end gap-2">
+                            {starsigns.map((sign: string, i: number) => (
                                 <motion.div
-                                    key={mythNarrative.substring(0, 30)}
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 1.05 }}
-                                    className="relative z-10"
+                                    initial={{ x: 20, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    key={i}
+                                    className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-xl flex items-center gap-2 group"
                                 >
-                                    <div className="text-[10px] font-black text-amber-500/40 mb-8 uppercase tracking-[0.5em]">The Eternal Saga</div>
-                                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif italic text-white leading-tight drop-shadow-2xl">
-                                        <PremiumText text={mythNarrative} />
-                                    </h2>
+                                    <Star className="w-3 h-3 text-yellow-400 animate-pulse" />
+                                    <span className="text-[9px] font-black uppercase tracking-widest text-white/80 group-hover:text-white transition-colors">{sign}</span>
                                 </motion.div>
-                            </AnimatePresence>
-                        </div>
-                    </div>
-
-                    {/* The Prophet's Scroll */}
-                    <div className="lg:col-span-1 flex flex-col gap-8 h-full">
-                        <div className="bg-[#1a1625] rounded-[2.5rem] border border-amber-500/10 p-10 flex-1 flex flex-col items-center justify-center text-center shadow-inner relative overflow-hidden border-t-amber-500/30">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
-                            <BookOpen className="text-amber-500/20 mb-6" size={32} />
-                            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-amber-500/60 mb-8">{panelTitle}</h4>
-                            <p className="text-xl italic font-serif text-gray-300 leading-relaxed whitespace-pre-wrap px-4">
-                                "{panelPoem}"
-                            </p>
-                            <div className="absolute bottom-6 flex gap-2">
-                                <Sparkles size={12} className="text-amber-500 animate-pulse" />
-                                <Sparkles size={12} className="text-amber-500 animate-pulse delay-500" />
-                            </div>
-                        </div>
-
-                        {/* Quick Status Info */}
-                        <div className="bg-white/5 rounded-3xl p-6 flex flex-col gap-4 border border-white/5 backdrop-blur-3xl">
-                            <div className="flex items-center gap-4 text-white/40">
-                                <Ghost size={16} />
-                                <span className="text-[9px] font-black uppercase tracking-[0.2em]">Current Resonance: High</span>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>
 
-                {/* The Divine Command Input */}
-                <div className="relative z-20 mx-auto w-full max-w-4xl">
-                    <div className="bg-white/5 backdrop-blur-[40px] border border-white/10 p-3 rounded-[3rem] flex items-center gap-4 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] focus-within:border-amber-500/30 transition-all">
-                        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white shadow-lg shadow-amber-950/20">
-                            <Scroll size={24} />
+                {/* --- MAIN DIVINE DISPLAY --- */}
+                <div className="flex-1 flex flex-col items-center justify-center relative min-h-0">
+
+                    {/* Divinity & Belief Meters (Vertical Nebula) */}
+                    <div className="absolute top-1/2 left-10 -translate-y-1/2 flex flex-col items-center gap-4">
+                        <span className="text-[9px] -rotate-90 uppercase tracking-[0.4em] text-white/20 font-black mb-12">Divinity</span>
+                        <div className="h-64 w-3 bg-white/5 rounded-full relative overflow-hidden flex flex-col justify-end">
+                            <motion.div
+                                animate={{ height: `${divinity}%` }}
+                                className="w-full bg-gradient-to-t from-orange-600 via-orange-400 to-white shadow-[0_0_20px_orange]"
+                            />
                         </div>
-                        <input
-                            value={input}
-                            onChange={e => setInput(e.target.value)}
-                            onKeyDown={e => e.key === 'Enter' && handleAction()}
-                            placeholder="Forge your immortal command..."
-                            className="flex-1 bg-transparent border-none text-white placeholder:text-white/10 py-5 px-3 focus:outline-none font-serif text-2xl"
-                            disabled={loading}
-                        />
-                        <PremiumButton
-                            onClick={handleAction}
-                            disabled={!input || loading}
-                            className="h-14 px-12 rounded-full !bg-white !text-black hover:scale-105 transition-transform font-black text-[10px] tracking-widest shadow-2xl"
+                        <Zap size={16} className="text-orange-400" />
+                    </div>
+
+                    <div className="absolute top-1/2 right-10 -translate-y-1/2 flex flex-col items-center gap-4">
+                        <span className="text-[9px] rotate-90 uppercase tracking-[0.4em] text-white/20 font-black mb-12">Belief</span>
+                        <div className="h-64 w-3 bg-white/5 rounded-full relative overflow-hidden flex flex-col justify-end">
+                            <motion.div
+                                animate={{ height: `${belief}%` }}
+                                className="w-full bg-gradient-to-t from-cyan-600 via-cyan-400 to-white shadow-[0_0_20px_cyan]"
+                            />
+                        </div>
+                        <Flame size={16} className="text-cyan-400" />
+                    </div>
+
+                    {/* Central Mythic Card */}
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={narrative}
+                            initial={{ opacity: 0, scale: 0.9, rotateY: 90 }}
+                            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                            exit={{ opacity: 0, scale: 1.1, rotateY: -90 }}
+                            transition={{ duration: 0.8, ease: "circOut" }}
+                            className="relative w-full max-w-3xl bg-black/40 border border-white/10 rounded-[3rem] p-12 backdrop-blur-3xl shadow-2xl flex flex-col items-center text-center overflow-hidden"
                         >
-                            {loading ? <Flame className="animate-spin" size={16} /> : 'MANIFEST'}
+                            {/* Decorative Borders */}
+                            <div className="absolute inset-4 border border-white/5 rounded-[2.5rem] pointer-events-none" />
+
+                            <div className="mb-8">
+                                <h3 className="text-3xl md:text-5xl font-serif font-black text-white italic tracking-tighter mb-4 selection:bg-orange-500/40">
+                                    {mythicCard.title || "The Unwritten Word"}
+                                </h3>
+                                <div className="h-px w-32 bg-gradient-to-r from-transparent via-orange-500 to-transparent mx-auto" />
+                            </div>
+
+                            <p className="text-xl md:text-3xl text-white/80 font-serif leading-relaxed italic max-w-2xl mb-12">
+                                <PremiumText text={narrative} />
+                            </p>
+
+                            <div className="bg-white/5 border border-white/5 p-8 rounded-3xl relative w-full group overflow-hidden">
+                                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-500/5 to-transparent pointer-events-none" />
+                                <Feather className="w-6 h-6 text-orange-500/40 mx-auto mb-4" />
+                                <p className="text-sm font-serif text-white/40 italic leading-relaxed px-8">
+                                    "{mythicCard.prophecy || "The future is a blank sky awaiting its first star."}"
+                                </p>
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                {/* --- DIVINE COMMAND FOOTER --- */}
+                <div className="p-10 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col items-center gap-10">
+
+                    {/* Path Selection */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+                        {options.map((opt: any, i: number) => (
+                            <button
+                                key={i}
+                                onClick={() => handleAction(opt.concept)}
+                                disabled={loading}
+                                className="group relative p-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-3xl text-left transition-all duration-500 transform hover:-translate-y-2 overflow-hidden flex flex-col justify-between h-40"
+                            >
+                                <div className="absolute top-4 right-4 opacity-5 group-hover:opacity-100 transition-opacity">
+                                    <CircleDashed className="w-12 h-12 text-white animate-spin-slow" />
+                                </div>
+                                <div>
+                                    <span className="text-[9px] uppercase font-black tracking-widest text-orange-500/60 mb-1 block">The Way of {opt.concept.split(' ')[2]}</span>
+                                    <h4 className="text-sm font-black text-white uppercase tracking-tight">{opt.concept}</h4>
+                                </div>
+                                <div className="space-y-1">
+                                    <span className="text-[8px] uppercase tracking-widest text-white/30 font-bold block">Cost: {opt.cost}</span>
+                                    <p className="text-[10px] text-white/60 font-serif italic leading-relaxed line-clamp-2">{opt.benefit}</p>
+                                </div>
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className="w-full max-w-4xl flex gap-4">
+                        <div className="flex-1 relative group">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-cyan-500/20 rounded-3xl blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-700" />
+                            <div className="relative flex items-center bg-black/60 border-2 border-white/10 rounded-[2.5rem] px-8 py-5">
+                                <ScrollText className="w-6 h-6 text-white/20 mr-4" />
+                                <input
+                                    value={input}
+                                    onChange={e => setInput(e.target.value)}
+                                    onKeyDown={e => e.key === 'Enter' && handleAction(input)}
+                                    placeholder="Forge an absolute command..."
+                                    className="w-full bg-transparent border-none text-xl font-serif font-black text-white italic placeholder:text-white/10 focus:outline-none"
+                                    disabled={loading}
+                                />
+                            </div>
+                        </div>
+                        <PremiumButton
+                            onClick={() => handleAction(input)}
+                            disabled={loading || !input}
+                            className={`h-[72px] w-[72px] rounded-[2rem] flex items-center justify-center transition-all ${loading ? 'opacity-50' : 'bg-gradient-to-br from-orange-500 to-orange-700 shadow-2xl hover:scale-105 active:scale-95'}`}
+                        >
+                            {loading ? <Orbit className="animate-spin text-white" /> : <ChevronRight className="text-white" size={32} />}
                         </PremiumButton>
                     </div>
+
+                    <button className="flex items-center gap-2 text-[10px] font-black text-white/20 hover:text-white/50 transition-colors uppercase tracking-[0.4em]">
+                        <LayoutGrid size={12} /> View Previous Epochs
+                    </button>
                 </div>
+
             </div>
         </PremiumGameLayout>
     );
 };
-

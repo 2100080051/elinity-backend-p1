@@ -1,142 +1,215 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+    Compass,
+    GitBranch,
+    Navigation,
+    Anchor,
+    Wind,
+    Moon,
+    Zap,
+    Activity,
+    Sparkles,
+    ChevronRight,
+    Database,
+    Star,
+    Sunrise,
+    Waves,
+    Cpu,
+    Heart
+} from 'lucide-react';
 import { useGame } from '../../context/GameContext';
 import { sendAction } from '../../api/client';
-import { PremiumButton, PremiumText } from '../../components/shared/PremiumComponents';
-import { Compass, GitBranch, Navigation, Anchor, Wind, Moon } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { PremiumGameLayout } from '../PremiumGameLayout';
 
 export const CompassGameView = () => {
-    const { gameState, sessionId, userId, updateGameState, gameSlug } = useGame();
+    const { gameState, sessionId, userId, gameSlug, updateGameState } = useGame();
     const [loading, setLoading] = useState(false);
 
     if (!gameState) return null;
 
-    const narrative = gameState.last_ai_response?.narrative || "The stars are silent. Where do we sail?";
-    const location = gameState.last_ai_response?.location_name || "The Great Unknown";
-    const insight = gameState.last_ai_response?.compass_insight;
-    const choices = gameState.last_ai_response?.choices || [];
+    const {
+        location = 'The Great Unknown',
+        north_south = 50,
+        east_west = 50,
+        status = 'active',
+        last_ai_response = {}
+    } = gameState;
 
-    // AXES: ns (Logic vs Emotion), ew (Self vs Others)
-    const ns = gameState.north_south ?? 50;
-    const ew = gameState.east_west ?? 50;
+    const narrative = last_ai_response?.narrative || "The stars are silent. Where do we sail?";
+    const insight = last_ai_response?.compass_insight;
+    const choices = last_ai_response?.choices || [];
 
     const handleChoice = async (c: string) => {
-        if (!sessionId || !gameSlug) return;
+        if (!sessionId || !gameSlug || loading) return;
         setLoading(true);
         try {
             const resp = await sendAction(gameSlug, sessionId, userId, 'choose_path', c);
             if (resp.ok) updateGameState(resp.state);
-        } catch (e) { console.error(e); }
+        } catch (e) {
+            console.error("The Master Voyager communication error:", e);
+        }
         setLoading(false);
     };
 
     return (
-        <PremiumGameLayout
-            title="The Great Compass"
-            subtitle="Cartography of the Soul"
-            icon={Compass}
-            backgroundVar="starfield"
-            guideText="1. Navigate symbolic landscapes using your inherent values.\n2. North (Logic) vs South (Emotion).\n3. East (Individual) vs West (Collective).\n4. The Master Voyager maps your trajectory across the unseen seas."
-        >
-            <div className="flex flex-col h-full gap-8 relative p-4 md:p-8">
+        <div className="min-h-screen bg-[#020617] text-[#f8fafc] font-sans p-4 md:p-8 flex flex-col gap-6 overflow-hidden relative">
+            {/* Celestial Sea Background */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_40%,#1e3a8a_0%,transparent_100%)] opacity-20" />
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10" />
+            </div>
 
-                {/* Location Reveal */}
-                <div className="flex justify-center relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center gap-3 bg-white/5 backdrop-blur-3xl px-8 py-3 rounded-full border border-white/10 shadow-2xl"
-                    >
-                        <Anchor size={14} className="text-cyan-400" />
-                        <span className="text-xs font-black uppercase tracking-[0.4em] text-white/80">{location}</span>
-                    </motion.div>
-                </div>
-
-                <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-                    {/* Left: The Navigator (Compass) */}
-                    <div className="relative flex flex-col items-center justify-center aspect-square max-w-md mx-auto group">
-                        {/* Spinning Star Chart Rings */}
-                        <div className="absolute inset-0 border border-white/5 rounded-full animate-[spin_120s_linear_infinite]" />
-                        <div className="absolute inset-4 border border-white/5 rounded-full animate-[spin_90s_linear_infinite_reverse]" />
-                        <div className="absolute inset-10 border border-white/10 rounded-full animate-[spin_60s_linear_infinite]" />
-
-                        {/* Axis Labeling */}
-                        <div className="absolute top-0 flex flex-col items-center text-cyan-400 opacity-50"><Wind size={16} /><span className="text-[8px] font-black mt-1">LOGIC</span></div>
-                        <div className="absolute bottom-0 flex flex-col items-center text-rose-400 opacity-50"><Moon size={16} /><span className="text-[8px] font-black mt-1">EMOTION</span></div>
-                        <div className="absolute left-0 flex flex-row items-center text-indigo-400 opacity-50"><span className="text-[8px] font-black mr-1 uppercase">Self</span><Anchor size={16} rotate={-90} /></div>
-                        <div className="absolute right-0 flex flex-row items-center text-emerald-400 opacity-50"><Anchor size={16} rotate={90} /><span className="text-[8px] font-black ml-1 uppercase">Others</span></div>
-
-                        {/* The Indicator Needle (Visualized as a soft glow point) */}
-                        <motion.div
-                            animate={{
-                                x: (ew - 50) * 3,
-                                y: (ns - 50) * -3
-                            }}
-                            className="relative z-20 w-3 h-3 bg-white rounded-full shadow-[0_0_20px_white] ring-4 ring-white/10"
-                        >
-                            <div className="absolute -inset-10 bg-white/5 rounded-full blur-xl" />
-                        </motion.div>
-
-                        <Compass className="absolute inset-0 text-white/5 p-20 animate-pulse" />
+            {/* Header - Master Voyager HUD */}
+            <div className="flex flex-wrap items-center justify-between gap-4 z-10 border-b border-white/5 pb-8 bg-black/40 backdrop-blur-3xl p-8 rounded-[2.5rem] shadow-2xl">
+                <div className="flex items-center gap-6">
+                    <div className="p-4 bg-blue-600 rounded-2xl shadow-[0_0_40px_rgba(37,99,235,0.3)]">
+                        <Compass className="w-8 h-8 text-white animate-spin-slow" />
                     </div>
-
-                    {/* Right: The Narrative & Insights */}
-                    <div className="flex flex-col gap-10">
-                        <div className="relative z-10">
-                            <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={narrative.substring(0, 30)}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -20 }}
-                                    className="bg-black/60 backdrop-blur-3xl p-10 rounded-[2.5rem] border border-white/10 shadow-3xl min-h-[250px] flex flex-col justify-center"
-                                >
-                                    <h2 className="text-[10px] font-black text-cyan-400 mb-6 uppercase tracking-[0.5em] flex items-center gap-2">
-                                        <Navigation size={12} /> THE VOYAGE
-                                    </h2>
-                                    <div className="text-2xl md:text-3xl lg:text-4xl text-white leading-tight font-serif italic mb-8">
-                                        <PremiumText text={narrative} />
-                                    </div>
-
-                                    {insight && (
-                                        <div className="pt-6 border-t border-white/5">
-                                            <div className="flex items-center gap-2 text-white/30 text-[9px] uppercase tracking-[0.3em] mb-2">APHORISM</div>
-                                            <p className="text-gray-400 font-serif italic">"{insight}"</p>
-                                        </div>
-                                    )}
-                                </motion.div>
-                            </AnimatePresence>
-                        </div>
-
-                        {/* Choice System */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {choices.map((c: string, i: number) => (
-                                <motion.div key={i} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                                    <PremiumButton
-                                        variant="secondary"
-                                        className="w-full text-left p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 hover:bg-cyan-500/5 transition-all flex items-center justify-between group"
-                                        onClick={() => handleChoice(c)}
-                                        disabled={loading}
-                                    >
-                                        <span className="text-xs font-black tracking-widest text-white/60 group-hover:text-white transition-colors">{c}</span>
-                                        <GitBranch size={16} className="text-white/20 group-hover:text-cyan-400 transition-colors" />
-                                    </PremiumButton>
-                                </motion.div>
-                            ))}
+                    <div>
+                        <h1 className="text-3xl font-black tracking-tighter text-white uppercase italic">The Great <span className="text-blue-500">Compass</span></h1>
+                        <div className="flex items-center gap-2 mt-1">
+                            <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                            <span className="text-[10px] uppercase font-bold tracking-[0.4em] text-blue-500/40 italic">Latitude: QUANTUM // Bearings: STABLE</span>
                         </div>
                     </div>
                 </div>
 
-                {/* Footer Depth Meter */}
-                <div className="flex justify-center gap-2 pb-4">
-                    {[...Array(6)].map((_, i) => (
-                        <div key={i} className={`h-1 rounded-full transition-all duration-1000 ${gameState.turn > i ? 'w-8 bg-cyan-500 shadow-[0_0_10px_#06b6d4]' : 'w-2 bg-white/10'}`} />
-                    ))}
+                <div className="flex items-center gap-10">
+                    <NavigatorStat label="Location" value={location} icon={<Anchor className="w-4 h-4 text-blue-400" />} />
+                    <div className="w-px h-10 bg-white/5" />
+                    <NavigatorStat label="Drift" value="Minimal" icon={<Wind className="text-sky-400 w-4 h-4" />} />
+                    <div className="w-px h-10 bg-white/5" />
+                    <NavigatorStat label="Celestial Sync" value="High" icon={<Star className="w-4 h-4 text-amber-400" />} />
                 </div>
             </div>
-        </PremiumGameLayout>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 z-10 flex-grow pt-4 overflow-hidden">
+                {/* Visual Compass Display */}
+                <div className="lg:col-span-5 flex flex-col items-center justify-center p-8 relative shrink-0">
+                    <div className="relative w-full max-w-[450px] aspect-square rounded-full border border-white/5 flex items-center justify-center shadow-2xl bg-white/[0.01] backdrop-blur-sm">
+                        {/* Rotating Rings */}
+                        <div className="absolute inset-4 border border-white/5 rounded-full animate-[spin_60s_linear_infinite]" />
+                        <div className="absolute inset-10 border border-white/10 rounded-full animate-[spin_45s_linear_infinite_reverse]" />
+                        <div className="absolute inset-20 border border-white/5 rounded-full animate-[spin_90s_linear_infinite]" />
+
+                        {/* Axes Labels */}
+                        <div className="absolute top-6 flex flex-col items-center opacity-40 group hover:opacity-100 transition-opacity">
+                            <Cpu className="text-blue-400 w-5 h-5 mb-1" />
+                            <span className="text-[10px] font-black tracking-[0.3em] text-blue-400 uppercase">Logic</span>
+                        </div>
+                        <div className="absolute bottom-6 flex flex-col items-center opacity-40 group hover:opacity-100 transition-opacity">
+                            <Heart className="text-rose-500 w-5 h-5 mb-1" />
+                            <span className="text-[10px] font-black tracking-[0.3em] text-rose-500 uppercase">Emotion</span>
+                        </div>
+                        <div className="absolute left-6 flex flex-col items-center opacity-40 group hover:opacity-100 transition-opacity">
+                            <Zap className="text-amber-500 w-5 h-5 mb-1" />
+                            <span className="text-[10px] font-black tracking-[0.3em] text-amber-500 uppercase">Self</span>
+                        </div>
+                        <div className="absolute right-6 flex flex-col items-center opacity-40 group hover:opacity-100 transition-opacity">
+                            <Users className="text-emerald-500 w-5 h-5 mb-1" />
+                            <span className="text-[10px] font-black tracking-[0.3em] text-emerald-500 uppercase">Others</span>
+                        </div>
+
+                        {/* The Indicator */}
+                        <motion.div
+                            animate={{
+                                x: (east_west - 50) * 3,
+                                y: (north_south - 50) * -3
+                            }}
+                            className="relative z-20 w-8 h-8 flex items-center justify-center"
+                        >
+                            <div className="absolute inset-0 bg-white rounded-full blur-md opacity-20 animate-pulse" />
+                            <div className="w-3 h-3 bg-white rounded-full shadow-[0_0_20px_white] ring-4 ring-white/20" />
+
+                            {/* Trace Lines */}
+                            <div className="absolute h-64 w-[1px] bg-gradient-to-t from-transparent via-white/10 to-transparent pointer-events-none" />
+                            <div className="absolute w-64 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+                        </motion.div>
+
+                        <Compass className="absolute inset-0 text-white/[0.02] p-24 pointer-events-none" />
+                    </div>
+
+                    <div className="mt-12 flex items-center gap-6">
+                        <div className="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black tracking-widest text-white/40">
+                            TRAJECTORY: {(north_south > 50 ? 'NORTH' : 'SOUTH')} / {(east_west > 50 ? 'EAST' : 'WEST')}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Narrative & Decision Feed */}
+                <div className="lg:col-span-7 flex flex-col gap-6 overflow-hidden">
+                    <motion.div
+                        key={narrative}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="flex-grow bg-white/[0.02] border border-white/5 rounded-[3.5rem] p-16 relative overflow-hidden flex flex-col justify-center shadow-2xl backdrop-blur-md"
+                    >
+                        <div className="absolute top-10 right-10 opacity-[0.03]">
+                            <Sunrise className="w-64 h-64 text-blue-500" />
+                        </div>
+
+                        <div className="relative z-10 max-w-4xl">
+                            <div className="flex items-center gap-3 mb-10 text-[11px] font-black text-blue-900 uppercase tracking-[0.8em]">
+                                <Navigation className="w-4 h-4" /> Master_Voyager_Cartography
+                            </div>
+
+                            <p className="text-2xl md:text-5xl font-light leading-snug text-slate-100 italic selection:bg-blue-500/30 mb-12">
+                                {narrative}
+                            </p>
+
+                            <AnimatePresence mode="wait">
+                                {insight && (
+                                    <motion.div
+                                        key={insight}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="p-8 bg-blue-600/5 border border-blue-600/10 rounded-[2rem] text-blue-300 font-serif italic text-lg shadow-inner relative"
+                                    >
+                                        <div className="absolute top-0 left-0 w-full h-[1px] bg-blue-500/20" />
+                                        "{insight}"
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    </motion.div>
+
+                    {/* Choice Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-48 shrink-0">
+                        {choices.map((c: string, i: number) => (
+                            <motion.button
+                                key={i}
+                                whileHover={{ scale: 1.02, y: -4 }}
+                                whileTap={{ scale: 0.98 }}
+                                onClick={() => handleChoice(c)}
+                                disabled={loading}
+                                className="group relative bg-[#0f172a] hover:bg-blue-900/10 border border-blue-900/20 rounded-[2rem] p-8 text-left transition-all overflow-hidden flex flex-col justify-between shadow-xl"
+                            >
+                                <div className="absolute top-0 right-0 p-6 opacity-[0.05] group-hover:opacity-100 transition-all">
+                                    <Waves className="w-12 h-12 text-blue-600" />
+                                </div>
+                                <div>
+                                    <span className="text-[9px] uppercase font-black tracking-[0.4em] text-blue-700/60 mb-2 block">Fork {i + 1}</span>
+                                    <h4 className="text-2xl font-serif font-black text-blue-100 group-hover:text-white transition-colors">{c}</h4>
+                                </div>
+                                <div className="flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-blue-900 group-hover:text-blue-500 transition-colors">
+                                    <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                                    Sail Towards
+                                </div>
+                            </motion.button>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 
+const NavigatorStat = ({ label, value, icon }: { label: string, value: string, icon: React.ReactNode }) => (
+    <div className="text-center group">
+        <div className="flex items-center gap-2 mb-2 justify-center opacity-30 group-hover:opacity-100 transition-opacity">
+            {icon}
+            <span className="text-[10px] uppercase font-black tracking-widest text-slate-400">{label}</span>
+        </div>
+        <p className="text-3xl font-black italic text-white tracking-tighter group-hover:text-blue-500 transition-colors uppercase whitespace-nowrap">{value}</p>
+    </div>
+);

@@ -17,7 +17,7 @@ load_dotenv()
 
 
 # SQLAlchemy (sync) setup - used for metadata.create_all and sync code
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL.replace("+asyncpg", ""))
 Session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 

@@ -93,5 +93,33 @@ class Chat(Base):
     created_at = Column(DateTime, default=datetime.now(timezone.utc))
     updated_at = Column(DateTime, nullable=True)
 
+
     class Config:
         from_attributes = True
+
+
+# ----------------------------
+# Game Chat (Separated)
+# ----------------------------
+class GameChat(Base):
+    """
+    Dedicated table for in-game messages.
+    Linked to GameSession, NOT the general 'groups' table.
+    Transient or persistent based on game logic.
+    """
+    __tablename__ = "game_chats"
+
+    id = Column(String, primary_key=True, default=gen_uuid)
+    game_session_id = Column(String, ForeignKey("game_sessions.session_id"), nullable=False, index=True)
+    
+    sender_id = Column(String, ForeignKey("tenants.id"), nullable=True)     # Which player sent it (can be None if system)
+    sender_name = Column(String, nullable=True)                             # "Player 1" or "Game Master"
+    
+    message = Column(String, nullable=False)
+    message_type = Column(String, default="text")                           # text, action, system, whisper
+    
+    created_at = Column(DateTime, default=datetime.now(timezone.utc))
+    
+    class Config:
+        from_attributes = True
+

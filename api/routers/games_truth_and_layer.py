@@ -39,24 +39,35 @@ async def start(req: StartReq, db: AsyncSession = Depends(get_async_db)):
     # Generate First Question
     initial_ai = {}
     if req.ai_enabled:
-        resp = await safe_chat_completion(system_prompt, "Start Level 1: Surface. Pose an introductory philosophical question. [FORMAT: JSON]", max_tokens=300)
+        prompt = "Initialize Layer 1: The Persona. Establish the first frequency. [FORMAT: JSON]"
         try:
-             initial_ai = json.loads(resp)
+            resp = await safe_chat_completion(system_prompt, prompt, max_tokens=600)
+            initial_ai = json.loads(resp)
         except:
-             initial_ai = {"question": "What mask do you wear most often?", "layer": 1, "reflection": "The journey begins."} 
+             initial_ai = {
+                "aperture_question": "What mask do you wear most often in high-stress environments?", 
+                "proxy_analysis": "Initial scan complete.", 
+                "layer_status": {"current": 1, "title": "The Social Mirror"},
+                "subliminal_prompt": "Reveal"
+            } 
 
     initial_state = {
         "layer": 1,
+        "layer_title": initial_ai.get("layer_status", {}).get("title", "The Persona"),
         "integrity": 100,
         "vulnerability": 10,
+        "shielding": 50,
         "turn": 1,
-        "current_question": initial_ai.get("question"),
+        "current_question": initial_ai.get("aperture_question"),
+        "proxy_analysis": initial_ai.get("proxy_analysis"),
+        "visual_frequency": initial_ai.get("visual_frequency"),
+        "subliminal_prompt": initial_ai.get("subliminal_prompt"),
         "ai_enabled": req.ai_enabled,
         "last_ai_response": initial_ai
     }
     
     session = await gm.create_session(game_slug=GAME_SLUG, host_id=req.user_id, initial_state=initial_state)
-    await gm.join_session(session.session_id, req.user_id, {"role": "Seeker"})
+    await gm.join_session(session.session_id, req.user_id, {"role": "Probe Subject"})
     group_id = await create_game_chat_group(db, session.session_id, req.user_id)
     return {'ok': True, 'session_id': session.session_id, 'group_id': group_id, 'state': session.state}
 
@@ -67,11 +78,8 @@ async def action(req: ActionReq, db: AsyncSession = Depends(get_async_db)):
     if not session: raise HTTPException(status_code=404, detail="Session not found")
     
     s = session.state
-    
-    ai_response = {}
     system_prompt = load_system_prompt(GAME_SLUG)
     
-    # Observer logic
     observer_note = ""
     if session.analysis and req.user_id in session.analysis:
         p_analysis = session.analysis[req.user_id]
@@ -79,49 +87,63 @@ async def action(req: ActionReq, db: AsyncSession = Depends(get_async_db)):
             observer_note = f"\n[SHADOW OBSERVER: {p_analysis.get('fun_commentary')}]"
 
     context = f"""
-    Current Level: {s.get('layer')}
-    Integrity: {s.get('integrity')}
-    Vulnerability: {s.get('vulnerability')}
-    Question: {s.get('current_question')}
-    Answer: {req.content}{observer_note}
+    PROBE STATE:
+    - Layer: {s.get('layer')} ({s.get('layer_title')})
+    - Integrity: {s.get('integrity')}
+    - Vulnerability: {s.get('vulnerability')}
+    - Shielding: {s.get('shielding')}
     
-    Evaluate the truth. Respond in JSON. 
-    Include [UPDATE: integrity-X, vulnerability+X, layer+1] if they were honest.
+    PREV QUESTION: {s.get('current_question')}
+    SUBJECT RESPONSE: {req.content} {observer_note}
+    
+    Analyze the frequency. Return VALID JSON.
+    Include [METADATA: integrity-X, vulnerability+X, shielding-X, layer+1] in 'proxy_analysis'.
     """
     
-    resp_str = await safe_chat_completion(system_prompt, context, max_tokens=500)
+    resp_str = await safe_chat_completion(system_prompt, context, max_tokens=800)
     try:
         ai_response = json.loads(resp_str)
     except:
-        ai_response = {"question": "Let us go deeper.", "layer": s.get("layer", 1) + 1, "reflection": "Your silence speaks volumes."}
+        ai_response = {"aperture_question": "Why do you resist?", "proxy_analysis": "Shielding too high."}
              
     # Parse Updates
     import re
     new_integ = s.get('integrity', 100)
     new_vuln = s.get('vulnerability', 10)
+    new_shield = s.get('shielding', 50)
     new_layer = s.get('layer', 1)
     
-    narrative_text = ai_response.get("reflection", "")
-    meta_match = re.search(r'\[UPDATE:\s*(.*?)\]', narrative_text)
+    analysis_text = ai_response.get("proxy_analysis", "")
+    meta_match = re.search(r'\[METADATA:\s*(.*?)\]', analysis_text)
     if meta_match:
-        narrative_text = narrative_text.replace(meta_match.group(0), "").strip()
+        analysis_text = analysis_text.replace(meta_match.group(0), "").strip()
         updates = meta_match.group(1).split(",")
         for up in updates:
             up = up.strip()
             if up.startswith("integrity"):
-                new_integ = min(100, max(0, new_integ + int(up[9:])))
+                try: new_integ = min(100, max(0, new_integ + int(re.search(r'[-+]?\d+', up).group())))
+                except: pass
             elif up.startswith("vulnerability"):
-                new_vuln = min(100, max(0, new_vuln + int(up[13:])))
+                try: new_vuln = min(100, max(0, new_vuln + int(re.search(r'[-+]?\d+', up).group())))
+                except: pass
+            elif up.startswith("shielding"):
+                try: new_shield = min(100, max(0, new_shield + int(re.search(r'[-+]?\d+', up).group())))
+                except: pass
             elif up.startswith("layer+1"):
-                new_layer += 1
+                new_layer = min(7, new_layer + 1)
 
     new_state = {
         **s,
         "layer": new_layer,
+        "layer_title": ai_response.get("layer_status", {}).get("title", s.get("layer_title")),
         "integrity": new_integ,
         "vulnerability": new_vuln,
-        "current_question": ai_response.get("question"),
-        "last_ai_response": {**ai_response, "reflection": narrative_text},
+        "shielding": new_shield,
+        "current_question": ai_response.get("aperture_question"),
+        "proxy_analysis": analysis_text,
+        "visual_frequency": ai_response.get("visual_frequency"),
+        "subliminal_prompt": ai_response.get("subliminal_prompt"),
+        "last_ai_response": {**ai_response, "proxy_analysis": analysis_text},
         "turn": s.get("turn", 0) + 1
     }
     

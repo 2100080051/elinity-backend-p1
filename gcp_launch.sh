@@ -22,24 +22,11 @@ else
     echo "Warning: env.h not found. Using existing .env if present."
 fi
 
-# 3. Create the Docker Compose file for GCP (Including Local DB)
-echo "🔧 Generating GCP Docker Config (Local DB)..."
+# 3. Create the Docker Compose file for GCP (External DB)
+echo "🔧 Generating GCP Docker Config (External DB)..."
 cat <<EOF > docker-compose.yml
 version: '3.8'
 services:
-  db:
-    image: postgres:15
-    container_name: elinity-gcp-db
-    restart: always
-    environment:
-      POSTGRES_USER: elinity_user
-      POSTGRES_PASSWORD: Deckoviz_prod_2026
-      POSTGRES_DB: elinity_db
-    ports:
-      - "5432:5432"
-    volumes:
-      - elinity_gcp_data:/var/lib/postgresql/data
-
   redis:
     image: redis:7-alpine
     container_name: elinity-gcp-redis
@@ -55,16 +42,12 @@ services:
       - "80:8081"
     env_file: .env
     environment:
-      - DB_URL=postgresql://elinity_user:Deckoviz_prod_2026@db:5432/elinity_db
+      - DB_URL=postgresql://postgres:Nani2906#@34.28.190.25:5432/elinity
       - REDIS_URL=redis://redis:6379/0
       - REDIS_HOST=redis
     command: uvicorn main:app --host 0.0.0.0 --port 8081
     depends_on:
-      - db
       - redis
-
-volumes:
-  elinity_gcp_data:
 EOF
 
 # 4. Cleanup Previous GCP Containers
