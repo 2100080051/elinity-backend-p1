@@ -357,6 +357,7 @@ allow_origins = cors_env.split(",") if cors_env else ["*"]
 # Force add the main frontend domain just in case
 allow_origins.extend([
     "https://elinity-the-story-weaver-docker.azurewebsites.net",
+    "https://elinity-game-ui.vercel.app",
     "http://localhost:5173",
     "http://localhost:4173",
     "http://localhost:3000",
